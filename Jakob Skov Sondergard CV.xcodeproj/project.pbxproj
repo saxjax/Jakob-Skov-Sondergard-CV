@@ -41,6 +41,10 @@
 		E4368B82289D600C00006E36 /* ConstTexts.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4368B80289D600C00006E36 /* ConstTexts.swift */; };
 		E4368B83289D600C00006E36 /* ConstTexts.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4368B80289D600C00006E36 /* ConstTexts.swift */; };
 		E4368B84289D600C00006E36 /* ConstTexts.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4368B80289D600C00006E36 /* ConstTexts.swift */; };
+		E48135B2289DC48B00B82777 /* Secrets.swift in Sources */ = {isa = PBXBuildFile; fileRef = E48135B1289DC48B00B82777 /* Secrets.swift */; };
+		E48135B3289DC48B00B82777 /* Secrets.swift in Sources */ = {isa = PBXBuildFile; fileRef = E48135B1289DC48B00B82777 /* Secrets.swift */; };
+		E48135B4289DC48B00B82777 /* Secrets.swift in Sources */ = {isa = PBXBuildFile; fileRef = E48135B1289DC48B00B82777 /* Secrets.swift */; };
+		E48135B5289DC48B00B82777 /* Secrets.swift in Sources */ = {isa = PBXBuildFile; fileRef = E48135B1289DC48B00B82777 /* Secrets.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -79,6 +83,7 @@
 		E4368B76289D4A2400006E36 /* CVItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CVItem.swift; sourceTree = "<group>"; };
 		E4368B7B289D55AB00006E36 /* CVSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CVSection.swift; sourceTree = "<group>"; };
 		E4368B80289D600C00006E36 /* ConstTexts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConstTexts.swift; sourceTree = "<group>"; };
+		E48135B1289DC48B00B82777 /* Secrets.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Secrets.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -127,15 +132,12 @@
 		E4368B20289C7EFA00006E36 /* Shared */ = {
 			isa = PBXGroup;
 			children = (
-				E4368B21289C7EFA00006E36 /* Jakob_Skov_Sondergard_CVApp.swift */,
-				E4368B22289C7EFA00006E36 /* ContentView.swift */,
-				E4368B80289D600C00006E36 /* ConstTexts.swift */,
-				E4368B67289C86E000006E36 /* SimpleInfoView.swift */,
+				E48135B0289DC3B500B82777 /* Controllers */,
+				E48135AE289DC33D00B82777 /* Views */,
+				E48135AF289DC35D00B82777 /* Models */,
 				E4368B23289C7EFB00006E36 /* Assets.xcassets */,
 				E4368B6C289D3F5400006E36 /* Constants.swift */,
-				E4368B71289D462200006E36 /* FontList.swift */,
-				E4368B76289D4A2400006E36 /* CVItem.swift */,
-				E4368B7B289D55AB00006E36 /* CVSection.swift */,
+				E48135B1289DC48B00B82777 /* Secrets.swift */,
 			);
 			path = Shared;
 			sourceTree = "<group>";
@@ -175,6 +177,34 @@
 				E4368B47289C7EFC00006E36 /* Tests_macOSLaunchTests.swift */,
 			);
 			path = "Tests macOS";
+			sourceTree = "<group>";
+		};
+		E48135AE289DC33D00B82777 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				E4368B22289C7EFA00006E36 /* ContentView.swift */,
+				E4368B67289C86E000006E36 /* SimpleInfoView.swift */,
+				E4368B7B289D55AB00006E36 /* CVSection.swift */,
+				E4368B71289D462200006E36 /* FontList.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		E48135AF289DC35D00B82777 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				E4368B80289D600C00006E36 /* ConstTexts.swift */,
+				E4368B76289D4A2400006E36 /* CVItem.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		E48135B0289DC3B500B82777 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				E4368B21289C7EFA00006E36 /* Jakob_Skov_Sondergard_CVApp.swift */,
+			);
+			path = Controllers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -336,6 +366,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E4368B4B289C7EFC00006E36 /* ContentView.swift in Sources */,
+				E48135B2289DC48B00B82777 /* Secrets.swift in Sources */,
 				E4368B77289D4A2400006E36 /* CVItem.swift in Sources */,
 				E4368B81289D600C00006E36 /* ConstTexts.swift in Sources */,
 				E4368B68289C86E000006E36 /* SimpleInfoView.swift in Sources */,
@@ -351,6 +382,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E4368B4C289C7EFC00006E36 /* ContentView.swift in Sources */,
+				E48135B3289DC48B00B82777 /* Secrets.swift in Sources */,
 				E4368B78289D4A2400006E36 /* CVItem.swift in Sources */,
 				E4368B82289D600C00006E36 /* ConstTexts.swift in Sources */,
 				E4368B69289C86E000006E36 /* SimpleInfoView.swift in Sources */,
@@ -366,6 +398,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E4368B3C289C7EFB00006E36 /* Tests_iOSLaunchTests.swift in Sources */,
+				E48135B4289DC48B00B82777 /* Secrets.swift in Sources */,
 				E4368B79289D4A2400006E36 /* CVItem.swift in Sources */,
 				E4368B83289D600C00006E36 /* ConstTexts.swift in Sources */,
 				E4368B6A289C86E000006E36 /* SimpleInfoView.swift in Sources */,
@@ -381,6 +414,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E4368B48289C7EFC00006E36 /* Tests_macOSLaunchTests.swift in Sources */,
+				E48135B5289DC48B00B82777 /* Secrets.swift in Sources */,
 				E4368B7A289D4A2400006E36 /* CVItem.swift in Sources */,
 				E4368B84289D600C00006E36 /* ConstTexts.swift in Sources */,
 				E4368B6B289C86E000006E36 /* SimpleInfoView.swift in Sources */,
