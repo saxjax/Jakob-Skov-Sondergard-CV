@@ -17,6 +17,30 @@
 		E4368B4C289C7EFC00006E36 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4368B22289C7EFA00006E36 /* ContentView.swift */; };
 		E4368B4D289C7EFC00006E36 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E4368B23289C7EFB00006E36 /* Assets.xcassets */; };
 		E4368B4E289C7EFC00006E36 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E4368B23289C7EFB00006E36 /* Assets.xcassets */; };
+		E4368B68289C86E000006E36 /* SimpleInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4368B67289C86E000006E36 /* SimpleInfoView.swift */; };
+		E4368B69289C86E000006E36 /* SimpleInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4368B67289C86E000006E36 /* SimpleInfoView.swift */; };
+		E4368B6A289C86E000006E36 /* SimpleInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4368B67289C86E000006E36 /* SimpleInfoView.swift */; };
+		E4368B6B289C86E000006E36 /* SimpleInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4368B67289C86E000006E36 /* SimpleInfoView.swift */; };
+		E4368B6D289D3F5400006E36 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4368B6C289D3F5400006E36 /* Constants.swift */; };
+		E4368B6E289D3F5400006E36 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4368B6C289D3F5400006E36 /* Constants.swift */; };
+		E4368B6F289D3F5400006E36 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4368B6C289D3F5400006E36 /* Constants.swift */; };
+		E4368B70289D3F5400006E36 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4368B6C289D3F5400006E36 /* Constants.swift */; };
+		E4368B72289D462200006E36 /* FontList.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4368B71289D462200006E36 /* FontList.swift */; };
+		E4368B73289D462200006E36 /* FontList.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4368B71289D462200006E36 /* FontList.swift */; };
+		E4368B74289D462200006E36 /* FontList.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4368B71289D462200006E36 /* FontList.swift */; };
+		E4368B75289D462200006E36 /* FontList.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4368B71289D462200006E36 /* FontList.swift */; };
+		E4368B77289D4A2400006E36 /* CVItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4368B76289D4A2400006E36 /* CVItem.swift */; };
+		E4368B78289D4A2400006E36 /* CVItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4368B76289D4A2400006E36 /* CVItem.swift */; };
+		E4368B79289D4A2400006E36 /* CVItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4368B76289D4A2400006E36 /* CVItem.swift */; };
+		E4368B7A289D4A2400006E36 /* CVItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4368B76289D4A2400006E36 /* CVItem.swift */; };
+		E4368B7C289D55AB00006E36 /* CVSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4368B7B289D55AB00006E36 /* CVSection.swift */; };
+		E4368B7D289D55AB00006E36 /* CVSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4368B7B289D55AB00006E36 /* CVSection.swift */; };
+		E4368B7E289D55AB00006E36 /* CVSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4368B7B289D55AB00006E36 /* CVSection.swift */; };
+		E4368B7F289D55AB00006E36 /* CVSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4368B7B289D55AB00006E36 /* CVSection.swift */; };
+		E4368B81289D600C00006E36 /* ConstTexts.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4368B80289D600C00006E36 /* ConstTexts.swift */; };
+		E4368B82289D600C00006E36 /* ConstTexts.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4368B80289D600C00006E36 /* ConstTexts.swift */; };
+		E4368B83289D600C00006E36 /* ConstTexts.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4368B80289D600C00006E36 /* ConstTexts.swift */; };
+		E4368B84289D600C00006E36 /* ConstTexts.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4368B80289D600C00006E36 /* ConstTexts.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +73,12 @@
 		E4368B41289C7EFB00006E36 /* Tests macOS.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Tests macOS.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E4368B45289C7EFC00006E36 /* Tests_macOS.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tests_macOS.swift; sourceTree = "<group>"; };
 		E4368B47289C7EFC00006E36 /* Tests_macOSLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tests_macOSLaunchTests.swift; sourceTree = "<group>"; };
+		E4368B67289C86E000006E36 /* SimpleInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimpleInfoView.swift; sourceTree = "<group>"; };
+		E4368B6C289D3F5400006E36 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		E4368B71289D462200006E36 /* FontList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FontList.swift; sourceTree = "<group>"; };
+		E4368B76289D4A2400006E36 /* CVItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CVItem.swift; sourceTree = "<group>"; };
+		E4368B7B289D55AB00006E36 /* CVSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CVSection.swift; sourceTree = "<group>"; };
+		E4368B80289D600C00006E36 /* ConstTexts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConstTexts.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,7 +129,13 @@
 			children = (
 				E4368B21289C7EFA00006E36 /* Jakob_Skov_Sondergard_CVApp.swift */,
 				E4368B22289C7EFA00006E36 /* ContentView.swift */,
+				E4368B80289D600C00006E36 /* ConstTexts.swift */,
+				E4368B67289C86E000006E36 /* SimpleInfoView.swift */,
 				E4368B23289C7EFB00006E36 /* Assets.xcassets */,
+				E4368B6C289D3F5400006E36 /* Constants.swift */,
+				E4368B71289D462200006E36 /* FontList.swift */,
+				E4368B76289D4A2400006E36 /* CVItem.swift */,
+				E4368B7B289D55AB00006E36 /* CVSection.swift */,
 			);
 			path = Shared;
 			sourceTree = "<group>";
@@ -300,7 +336,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				E4368B4B289C7EFC00006E36 /* ContentView.swift in Sources */,
+				E4368B77289D4A2400006E36 /* CVItem.swift in Sources */,
+				E4368B81289D600C00006E36 /* ConstTexts.swift in Sources */,
+				E4368B68289C86E000006E36 /* SimpleInfoView.swift in Sources */,
+				E4368B7C289D55AB00006E36 /* CVSection.swift in Sources */,
+				E4368B72289D462200006E36 /* FontList.swift in Sources */,
 				E4368B49289C7EFC00006E36 /* Jakob_Skov_Sondergard_CVApp.swift in Sources */,
+				E4368B6D289D3F5400006E36 /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -309,7 +351,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				E4368B4C289C7EFC00006E36 /* ContentView.swift in Sources */,
+				E4368B78289D4A2400006E36 /* CVItem.swift in Sources */,
+				E4368B82289D600C00006E36 /* ConstTexts.swift in Sources */,
+				E4368B69289C86E000006E36 /* SimpleInfoView.swift in Sources */,
+				E4368B7D289D55AB00006E36 /* CVSection.swift in Sources */,
+				E4368B73289D462200006E36 /* FontList.swift in Sources */,
 				E4368B4A289C7EFC00006E36 /* Jakob_Skov_Sondergard_CVApp.swift in Sources */,
+				E4368B6E289D3F5400006E36 /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -318,7 +366,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				E4368B3C289C7EFB00006E36 /* Tests_iOSLaunchTests.swift in Sources */,
+				E4368B79289D4A2400006E36 /* CVItem.swift in Sources */,
+				E4368B83289D600C00006E36 /* ConstTexts.swift in Sources */,
+				E4368B6A289C86E000006E36 /* SimpleInfoView.swift in Sources */,
+				E4368B7E289D55AB00006E36 /* CVSection.swift in Sources */,
+				E4368B74289D462200006E36 /* FontList.swift in Sources */,
 				E4368B3A289C7EFB00006E36 /* Tests_iOS.swift in Sources */,
+				E4368B6F289D3F5400006E36 /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -327,7 +381,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				E4368B48289C7EFC00006E36 /* Tests_macOSLaunchTests.swift in Sources */,
+				E4368B7A289D4A2400006E36 /* CVItem.swift in Sources */,
+				E4368B84289D600C00006E36 /* ConstTexts.swift in Sources */,
+				E4368B6B289C86E000006E36 /* SimpleInfoView.swift in Sources */,
+				E4368B7F289D55AB00006E36 /* CVSection.swift in Sources */,
+				E4368B75289D462200006E36 /* FontList.swift in Sources */,
 				E4368B46289C7EFC00006E36 /* Tests_macOS.swift in Sources */,
+				E4368B70289D3F5400006E36 /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
