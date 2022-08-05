@@ -1,0 +1,3 @@
+ -------------------- CUSTOM IGNORES -------------------
+Secrets.*
+*.DS_Store
