@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct CVSection: View {
+struct CVSectionView: View {
     @State var showContent = false
     @State var activeTitle = true
     @State var imageName = "eyeglasses"
@@ -80,7 +80,7 @@ struct CVSection: View {
     }
 }
 
-struct CVSection_Previews: PreviewProvider {
+struct CVSectionView_Previews: PreviewProvider {
     static let experience:[CVItem] = [
         CVItem(id:0,
                title:"""
@@ -99,6 +99,6 @@ Software Engineer | Private projects. 2018-Present
 """)
     ]
     static var previews: some View {
-        CVSection(showContent: true, sectionTitle: "Testing", sectionItems: experience)
+        CVSectionView(showContent: true, sectionTitle: "Testing", sectionItems: experience)
     }
 }

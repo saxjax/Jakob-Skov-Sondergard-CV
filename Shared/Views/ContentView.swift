@@ -16,9 +16,10 @@ struct ContentView: View {
         ZStack {
             Color(Constants.TextColors.appBackground)
                 .edgesIgnoringSafeArea(.all)
-            ScrollView{
-                VStack {
 
+            ScrollView{
+
+                VStack {
                     TopPresentationView(rotationAmount: $rotationAmount)
 
                     AboutMeButton(showAboutMe: $showAboutMe, rotation: $rotationAmount).rotation3DEffect(.degrees(rotationAmount), axis: (x:1,y:0,z:0))
@@ -28,12 +29,11 @@ struct ContentView: View {
                     ContactInfoView()
                     Divider()
                     showAboutMe ? nil : JobSectionView()
-                }
-            }
-        }
+                } //VStack
 
+            } //ScrollView
 
-
+        } //ZStack
     }
 }
 

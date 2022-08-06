@@ -11,12 +11,12 @@ struct JobSectionView: View {
     var body: some View {
 
         VStack{
-            CVSection(showContent: true, imageName: "rosette", sectionTitle: "Education", sectionItems: ConstTexts.education)
-            CVSection(imageName:"wrench.and.screwdriver.fill",sectionTitle: "Profesional experience", sectionItems: ConstTexts.experience)
-            CVSection(sectionTitle: "Study related experience", sectionItems: ConstTexts.studyRelatedExperience)
-            CVSection(imageName:"book",sectionTitle: "Publications", sectionItems: ConstTexts.publications)
-            CVSection(imageName: "keyboard.fill",sectionTitle: "Programming Languages", sectionItems: ConstTexts.languages)
-            CVSection(imageName:"oval.fill",sectionTitle: "Framaworks", sectionItems: ConstTexts.frameworks)
+            CVSectionView(showContent: true, imageName: "rosette", sectionTitle: "Education", sectionItems: ConstTexts.education)
+            CVSectionView(imageName:"wrench.and.screwdriver.fill",sectionTitle: "Profesional experience", sectionItems: ConstTexts.experience)
+            CVSectionView(sectionTitle: "Study related experience", sectionItems: ConstTexts.studyRelatedExperience)
+            CVSectionView(imageName:"book",sectionTitle: "Publications", sectionItems: ConstTexts.publications)
+            CVSectionView(imageName: "keyboard.fill",sectionTitle: "Programming Languages", sectionItems: ConstTexts.languages)
+            CVSectionView(imageName:"oval.fill",sectionTitle: "Framaworks", sectionItems: ConstTexts.frameworks)
         }
     }
 }

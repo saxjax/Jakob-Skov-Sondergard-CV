@@ -12,8 +12,8 @@ struct AboutMeSectionView: View {
     @Binding var rotationAmount: Double
     var body: some View {
         VStack {
-            CVSection(showContent:true,activeTitle: false,sectionTitle: "About Me", sectionItems: ConstTexts.aboutMe).background(Color.clear)
-            CVSection(showContent:true,activeTitle: false,sectionTitle: "Speedy Resume", sectionItems: ConstTexts.ultraResume).padding(.leading)
+            CVSectionView(showContent:true,activeTitle: false,sectionTitle: "About Me", sectionItems: ConstTexts.aboutMe).background(Color.clear)
+            CVSectionView(showContent:true,activeTitle: false,sectionTitle: "Speedy Resume", sectionItems: ConstTexts.ultraResume).padding(.leading)
             AboutMeButton(showAboutMe: $showAboutMe, rotation: $rotationAmount)
         }.padding(.horizontal)
 

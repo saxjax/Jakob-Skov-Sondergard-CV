@@ -33,10 +33,10 @@
 		E4368B78289D4A2400006E36 /* CVItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4368B76289D4A2400006E36 /* CVItem.swift */; };
 		E4368B79289D4A2400006E36 /* CVItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4368B76289D4A2400006E36 /* CVItem.swift */; };
 		E4368B7A289D4A2400006E36 /* CVItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4368B76289D4A2400006E36 /* CVItem.swift */; };
-		E4368B7C289D55AB00006E36 /* CVSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4368B7B289D55AB00006E36 /* CVSection.swift */; };
-		E4368B7D289D55AB00006E36 /* CVSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4368B7B289D55AB00006E36 /* CVSection.swift */; };
-		E4368B7E289D55AB00006E36 /* CVSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4368B7B289D55AB00006E36 /* CVSection.swift */; };
-		E4368B7F289D55AB00006E36 /* CVSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4368B7B289D55AB00006E36 /* CVSection.swift */; };
+		E4368B7C289D55AB00006E36 /* CVSectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4368B7B289D55AB00006E36 /* CVSectionView.swift */; };
+		E4368B7D289D55AB00006E36 /* CVSectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4368B7B289D55AB00006E36 /* CVSectionView.swift */; };
+		E4368B7E289D55AB00006E36 /* CVSectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4368B7B289D55AB00006E36 /* CVSectionView.swift */; };
+		E4368B7F289D55AB00006E36 /* CVSectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4368B7B289D55AB00006E36 /* CVSectionView.swift */; };
 		E4368B81289D600C00006E36 /* ConstTexts.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4368B80289D600C00006E36 /* ConstTexts.swift */; };
 		E4368B82289D600C00006E36 /* ConstTexts.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4368B80289D600C00006E36 /* ConstTexts.swift */; };
 		E4368B83289D600C00006E36 /* ConstTexts.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4368B80289D600C00006E36 /* ConstTexts.swift */; };
@@ -101,7 +101,7 @@
 		E4368B6C289D3F5400006E36 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		E4368B71289D462200006E36 /* FontList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FontList.swift; sourceTree = "<group>"; };
 		E4368B76289D4A2400006E36 /* CVItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CVItem.swift; sourceTree = "<group>"; };
-		E4368B7B289D55AB00006E36 /* CVSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CVSection.swift; sourceTree = "<group>"; };
+		E4368B7B289D55AB00006E36 /* CVSectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CVSectionView.swift; sourceTree = "<group>"; };
 		E4368B80289D600C00006E36 /* ConstTexts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConstTexts.swift; sourceTree = "<group>"; };
 		E48135B1289DC48B00B82777 /* Secrets.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Secrets.swift; sourceTree = "<group>"; };
 		E48135B6289DC5FC00B82777 /* AboutMeButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutMeButton.swift; sourceTree = "<group>"; };
@@ -209,7 +209,7 @@
 			children = (
 				E4368B22289C7EFA00006E36 /* ContentView.swift */,
 				E4368B67289C86E000006E36 /* SimpleInfoView.swift */,
-				E4368B7B289D55AB00006E36 /* CVSection.swift */,
+				E4368B7B289D55AB00006E36 /* CVSectionView.swift */,
 				E4368B71289D462200006E36 /* FontList.swift */,
 				E48135B6289DC5FC00B82777 /* AboutMeButton.swift */,
 				E48135BB289DCBB900B82777 /* JobSectionView.swift */,
@@ -318,7 +318,7 @@
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
 				LastSwiftUpdateCheck = 1340;
-				LastUpgradeCheck = 1340;
+				LastUpgradeCheck = 1400;
 				TargetAttributes = {
 					E4368B27289C7EFB00006E36 = {
 						CreatedOnToolsVersion = 13.4.1;
@@ -402,7 +402,7 @@
 				E4368B77289D4A2400006E36 /* CVItem.swift in Sources */,
 				E4368B81289D600C00006E36 /* ConstTexts.swift in Sources */,
 				E4368B68289C86E000006E36 /* SimpleInfoView.swift in Sources */,
-				E4368B7C289D55AB00006E36 /* CVSection.swift in Sources */,
+				E4368B7C289D55AB00006E36 /* CVSectionView.swift in Sources */,
 				E4368B72289D462200006E36 /* FontList.swift in Sources */,
 				E48135BC289DCBB900B82777 /* JobSectionView.swift in Sources */,
 				E4368B49289C7EFC00006E36 /* Jakob_Skov_Sondergard_CVApp.swift in Sources */,
@@ -423,7 +423,7 @@
 				E4368B78289D4A2400006E36 /* CVItem.swift in Sources */,
 				E4368B82289D600C00006E36 /* ConstTexts.swift in Sources */,
 				E4368B69289C86E000006E36 /* SimpleInfoView.swift in Sources */,
-				E4368B7D289D55AB00006E36 /* CVSection.swift in Sources */,
+				E4368B7D289D55AB00006E36 /* CVSectionView.swift in Sources */,
 				E4368B73289D462200006E36 /* FontList.swift in Sources */,
 				E48135BD289DCBB900B82777 /* JobSectionView.swift in Sources */,
 				E4368B4A289C7EFC00006E36 /* Jakob_Skov_Sondergard_CVApp.swift in Sources */,
@@ -444,7 +444,7 @@
 				E4368B79289D4A2400006E36 /* CVItem.swift in Sources */,
 				E4368B83289D600C00006E36 /* ConstTexts.swift in Sources */,
 				E4368B6A289C86E000006E36 /* SimpleInfoView.swift in Sources */,
-				E4368B7E289D55AB00006E36 /* CVSection.swift in Sources */,
+				E4368B7E289D55AB00006E36 /* CVSectionView.swift in Sources */,
 				E4368B74289D462200006E36 /* FontList.swift in Sources */,
 				E48135BE289DCBB900B82777 /* JobSectionView.swift in Sources */,
 				E4368B3A289C7EFB00006E36 /* Tests_iOS.swift in Sources */,
@@ -465,7 +465,7 @@
 				E4368B7A289D4A2400006E36 /* CVItem.swift in Sources */,
 				E4368B84289D600C00006E36 /* ConstTexts.swift in Sources */,
 				E4368B6B289C86E000006E36 /* SimpleInfoView.swift in Sources */,
-				E4368B7F289D55AB00006E36 /* CVSection.swift in Sources */,
+				E4368B7F289D55AB00006E36 /* CVSectionView.swift in Sources */,
 				E4368B75289D462200006E36 /* FontList.swift in Sources */,
 				E48135BF289DCBB900B82777 /* JobSectionView.swift in Sources */,
 				E4368B46289C7EFC00006E36 /* Tests_macOS.swift in Sources */,
@@ -524,6 +524,7 @@
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
+				DEAD_CODE_STRIPPING = YES;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
@@ -542,7 +543,7 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
-				MACOSX_DEPLOYMENT_TARGET = 12.3;
+				MACOSX_DEPLOYMENT_TARGET = 13.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -584,6 +585,7 @@
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
+				DEAD_CODE_STRIPPING = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
@@ -596,7 +598,7 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
-				MACOSX_DEPLOYMENT_TARGET = 12.3;
+				MACOSX_DEPLOYMENT_TARGET = 13.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SWIFT_COMPILATION_MODE = wholemodule;
@@ -611,10 +613,11 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = YES;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 2;
+				CURRENT_PROJECT_VERSION = 3;
 				DEVELOPMENT_TEAM = LW5S74625G;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.business";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -643,10 +646,11 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = YES;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 2;
+				CURRENT_PROJECT_VERSION = 3;
 				DEVELOPMENT_TEAM = LW5S74625G;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.business";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -676,9 +680,11 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = YES;
 				CODE_SIGN_ENTITLEMENTS = macOS/macOS.entitlements;
+				CODE_SIGN_IDENTITY = "-";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 3;
+				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_TEAM = LW5S74625G;
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
@@ -706,9 +712,11 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = YES;
 				CODE_SIGN_ENTITLEMENTS = macOS/macOS.entitlements;
+				CODE_SIGN_IDENTITY = "-";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 3;
+				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_TEAM = LW5S74625G;
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
@@ -776,6 +784,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_TEAM = LW5S74625G;
 				GENERATE_INFOPLIST_FILE = YES;
 				MACOSX_DEPLOYMENT_TARGET = 12.3;
@@ -795,6 +804,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_TEAM = LW5S74625G;
 				GENERATE_INFOPLIST_FILE = YES;
 				MACOSX_DEPLOYMENT_TARGET = 12.3;
