@@ -28,6 +28,7 @@ jobs:
           run: /usr/bin/xcodebuild -version
 
         - name: List Simulators
+          run: xcrun simctl list --json devices available | grep iOS
           run: xcrun simctl list --json devices available | grep name
 
         - name: Run unit test
