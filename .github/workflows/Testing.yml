@@ -5,12 +5,12 @@ on:
   pull_request:
     branches: [ "main" ]
 jobs:
-    SwiftLint:
-        runs-on: ubuntu-latest
-        steps:
-        - uses: actions/checkout@v1
-        - name: GitHub Action for SwiftLint
-          uses: norino-nomura/action-swiftlint@3.2.1
+#    SwiftLint:
+#        runs-on: ubuntu-latest
+#        steps:
+#        - uses: actions/checkout@v1
+#        - name: GitHub Action for SwiftLint
+#          uses: norino-nomura/action-swiftlint@3.2.1
 
     Test:
         name: Testing Swift Package and iOS app
