@@ -27,6 +27,9 @@ jobs:
         - name: Xcode version
           run: /usr/bin/xcodebuild -version
 
+        - name: List Simulators
+          run: xcrun simctl list --json devices available | grep name
+
         - name: Run unit test
           run:  xcodebuild test -scheme Jakob\ Skov\ Sondergard\ CV\ \(iOS\) -project Jakob\ Skov\ Sondergard\ CV.xcodeproj -destination 'platform=iOS Simulator,name=iPhone 13,OS=15.0' | xcpretty && exit ${PIPESTATUS[0]}
 
