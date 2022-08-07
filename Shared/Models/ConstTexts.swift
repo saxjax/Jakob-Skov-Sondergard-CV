@@ -7,9 +7,9 @@
 
 import Foundation
 class ConstTexts:ObservableObject{
-  static let name = "Jakob Skov Søndergård"
-  static let phone = "+45 53379559"
-  static let mail = "jakob@saxjax.dk"
+  @Published var name = "Jakob Skov Søndergård"
+  @Published var phone = "+45 53379559"
+  @Published var mail = "jakob@saxjax.dk"
   struct address {
     static let street = "Rolighedsvej 5"
     static let postnumber = "9510"
@@ -17,11 +17,11 @@ class ConstTexts:ObservableObject{
     static let country = "Denmark"
 
   }
-  static let resumeSubTitle = """
+  @Published var resumeSubTitle = """
                               Hi Track Unit
                               This CV is aimed at the position as iOS developer at Track Unit:
                               """
-  static let positionUrl = "http://saxjax.dk"
+  @Published var positionUrl = "http://saxjax.dk"
   static let resumeText = """
                         Beskriv personlige egenskaber,så de modsvarer stillingens kravspecifikationer.
                         Egenskaber Fordele Udbytte

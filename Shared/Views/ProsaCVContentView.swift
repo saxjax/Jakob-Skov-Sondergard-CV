@@ -9,18 +9,16 @@ import SwiftUI
 
 struct ProsaCVContentView: View {
   @ObservedObject var content: ConstTexts
-  //MARK: - info contact
-  @State var name = ConstTexts.name
-  let phone = ConstTexts.phone
-  let mail = ConstTexts.mail
+
   let street = ConstTexts.address.street
   let postnumber = ConstTexts.address.postnumber
   let city = ConstTexts.address.city
   let country = ConstTexts.address.country
+
   //MARK: - info position
-  let resumeTitle = "Resume"
-  let resumeSubTitle = ConstTexts.resumeSubTitle
-  let positionUrl = ConstTexts.positionUrl
+//  let resumeTitle = "Resume"
+//  let resumeSubTitle = ConstTexts.resumeSubTitle
+//  let positionUrl = ConstTexts.positionUrl
   @State var resume = ConstTexts.resumeText
 
   //MARK: - info competences
@@ -28,6 +26,19 @@ struct ProsaCVContentView: View {
   @State var competences = ConstTexts.competencesText
 
   var body: some View {
+    //MARK: - info contact
+    let name = content.name
+    let phone = content.phone
+    let mail = content.mail
+
+
+    //MARK: - info position
+    let resumeTitle = "Resume"
+    let resumeSubTitle = content.resumeSubTitle
+    let positionUrl = content.positionUrl
+
+
+
     VStack {
       //Contact
       HStack {
