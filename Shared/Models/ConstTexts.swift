@@ -6,7 +6,7 @@
 //
 
 import Foundation
-struct ConstTexts{
+class ConstTexts:ObservableObject{
   static let name = "Jakob Skov Søndergård"
   static let phone = "+45 53379559"
   static let mail = "jakob@saxjax.dk"
@@ -17,6 +17,10 @@ struct ConstTexts{
     static let country = "Denmark"
 
   }
+  static let resumeSubTitle = """
+                              Hi Track Unit
+                              This CV is aimed at the position as iOS developer at Track Unit:
+                              """
   static let positionUrl = "http://saxjax.dk"
   static let resumeText = """
                         Beskriv personlige egenskaber,så de modsvarer stillingens kravspecifikationer.

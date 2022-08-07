@@ -8,9 +8,9 @@
 import SwiftUI
 
 struct ProsaCVContentView: View {
-
+  @ObservedObject var content: ConstTexts
   //MARK: - info contact
-  let name = ConstTexts.name
+  @State var name = ConstTexts.name
   let phone = ConstTexts.phone
   let mail = ConstTexts.mail
   let street = ConstTexts.address.street
@@ -19,6 +19,7 @@ struct ProsaCVContentView: View {
   let country = ConstTexts.address.country
   //MARK: - info position
   let resumeTitle = "Resume"
+  let resumeSubTitle = ConstTexts.resumeSubTitle
   let positionUrl = ConstTexts.positionUrl
   @State var resume = ConstTexts.resumeText
 
@@ -37,9 +38,10 @@ struct ProsaCVContentView: View {
       //Greeting to specific position
 
       ScrollView {
-        ProsaCVItemContainerView(CVItemContainerTitle: resumeTitle, containerUrl: positionUrl, resume: $resume)
+//MARK: -Resume
+        ProsaCVItemContainerView(CVItemContainerTitle: resumeTitle, CVItemContainerSubTitle: resumeSubTitle, containerUrl: positionUrl, resume: $resume)
         Divider()
-
+//MARK: -Competences
         ProsaCVItemContainerView(CVItemContainerTitle: competencesTitle, resume: $competences)
       }
 
@@ -54,7 +56,7 @@ struct ProsaCVContentView: View {
 
 struct ProsaCVContentView_Previews: PreviewProvider {
   static var previews: some View {
-    ProsaCVContentView()
+    ProsaCVContentView(content: ConstTexts())
   }
 }
 
