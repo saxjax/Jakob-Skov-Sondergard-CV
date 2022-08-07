@@ -7,6 +7,17 @@
 
 import Foundation
 struct ConstTexts{
+    static let name = "Jakob Skov Søndergård"
+    static let phone = "+45 53379559"
+    static let mail = "jakob@saxjax.dk"
+    struct address {
+        static let street = "Rolighedsvej 5"
+        static let postnumber = "9510"
+        static let city = "Arden"
+        static let country = "Denmark"
+
+    }
+    
     static let aboutMe = [
         CVItem(id: 1, title: "Me and Programming", body: """
     My big programming passion lays in apples ecosystem of devices and the Swift programming language.

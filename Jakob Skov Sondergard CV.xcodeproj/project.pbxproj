@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E41E1852289FAF0600FF4DC6 /* ProsaCVContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E41E1851289FAF0600FF4DC6 /* ProsaCVContentView.swift */; };
+		E41E1853289FAF0600FF4DC6 /* ProsaCVContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E41E1851289FAF0600FF4DC6 /* ProsaCVContentView.swift */; };
+		E41E1854289FAF0600FF4DC6 /* ProsaCVContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E41E1851289FAF0600FF4DC6 /* ProsaCVContentView.swift */; };
+		E41E1855289FAF0600FF4DC6 /* ProsaCVContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E41E1851289FAF0600FF4DC6 /* ProsaCVContentView.swift */; };
 		E4368B3A289C7EFB00006E36 /* Tests_iOS.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4368B39289C7EFB00006E36 /* Tests_iOS.swift */; };
 		E4368B3C289C7EFB00006E36 /* Tests_iOSLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4368B3B289C7EFB00006E36 /* Tests_iOSLaunchTests.swift */; };
 		E4368B46289C7EFC00006E36 /* Tests_macOS.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4368B45289C7EFC00006E36 /* Tests_macOS.swift */; };
@@ -85,6 +89,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		E41E1851289FAF0600FF4DC6 /* ProsaCVContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProsaCVContentView.swift; sourceTree = "<group>"; };
 		E4368B21289C7EFA00006E36 /* Jakob_Skov_Sondergard_CVApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Jakob_Skov_Sondergard_CVApp.swift; sourceTree = "<group>"; };
 		E4368B22289C7EFA00006E36 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		E4368B23289C7EFB00006E36 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -208,6 +213,7 @@
 			isa = PBXGroup;
 			children = (
 				E4368B22289C7EFA00006E36 /* ContentView.swift */,
+				E41E1851289FAF0600FF4DC6 /* ProsaCVContentView.swift */,
 				E4368B67289C86E000006E36 /* SimpleInfoView.swift */,
 				E4368B7B289D55AB00006E36 /* CVSectionView.swift */,
 				E4368B71289D462200006E36 /* FontList.swift */,
@@ -405,6 +411,7 @@
 				E4368B7C289D55AB00006E36 /* CVSectionView.swift in Sources */,
 				E4368B72289D462200006E36 /* FontList.swift in Sources */,
 				E48135BC289DCBB900B82777 /* JobSectionView.swift in Sources */,
+				E41E1852289FAF0600FF4DC6 /* ProsaCVContentView.swift in Sources */,
 				E4368B49289C7EFC00006E36 /* Jakob_Skov_Sondergard_CVApp.swift in Sources */,
 				E4368B6D289D3F5400006E36 /* Constants.swift in Sources */,
 				E48135B7289DC5FC00B82777 /* AboutMeButton.swift in Sources */,
@@ -426,6 +433,7 @@
 				E4368B7D289D55AB00006E36 /* CVSectionView.swift in Sources */,
 				E4368B73289D462200006E36 /* FontList.swift in Sources */,
 				E48135BD289DCBB900B82777 /* JobSectionView.swift in Sources */,
+				E41E1853289FAF0600FF4DC6 /* ProsaCVContentView.swift in Sources */,
 				E4368B4A289C7EFC00006E36 /* Jakob_Skov_Sondergard_CVApp.swift in Sources */,
 				E4368B6E289D3F5400006E36 /* Constants.swift in Sources */,
 				E48135B8289DC5FC00B82777 /* AboutMeButton.swift in Sources */,
@@ -447,6 +455,7 @@
 				E4368B7E289D55AB00006E36 /* CVSectionView.swift in Sources */,
 				E4368B74289D462200006E36 /* FontList.swift in Sources */,
 				E48135BE289DCBB900B82777 /* JobSectionView.swift in Sources */,
+				E41E1854289FAF0600FF4DC6 /* ProsaCVContentView.swift in Sources */,
 				E4368B3A289C7EFB00006E36 /* Tests_iOS.swift in Sources */,
 				E4368B6F289D3F5400006E36 /* Constants.swift in Sources */,
 				E48135B9289DC5FC00B82777 /* AboutMeButton.swift in Sources */,
@@ -468,6 +477,7 @@
 				E4368B7F289D55AB00006E36 /* CVSectionView.swift in Sources */,
 				E4368B75289D462200006E36 /* FontList.swift in Sources */,
 				E48135BF289DCBB900B82777 /* JobSectionView.swift in Sources */,
+				E41E1855289FAF0600FF4DC6 /* ProsaCVContentView.swift in Sources */,
 				E4368B46289C7EFC00006E36 /* Tests_macOS.swift in Sources */,
 				E4368B70289D3F5400006E36 /* Constants.swift in Sources */,
 				E48135BA289DC5FC00B82777 /* AboutMeButton.swift in Sources */,

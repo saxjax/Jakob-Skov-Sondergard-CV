@@ -1,8 +1,17 @@
 {
   "images" : [
     {
-      "filename" : "8998CFD6-0647-4152-B6F6-0213744F499E_1_105_c.jpeg",
-      "idiom" : "universal"
+      "filename" : "75341018_10214943210842951_2267506006575546368_n.jpeg",
+      "idiom" : "universal",
+      "scale" : "1x"
+    },
+    {
+      "idiom" : "universal",
+      "scale" : "2x"
+    },
+    {
+      "idiom" : "universal",
+      "scale" : "3x"
     }
   ],
   "info" : {
