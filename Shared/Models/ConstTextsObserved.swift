@@ -7,6 +7,7 @@
 
 import Foundation
 class ConstTextsObserved:ObservableObject{
+  @Published var cvCode = "123456"
   @Published var name = "Jakob Skov Søndergård"
   @Published var phone = "+45 53379559"
   @Published var mail = "jakob@saxjax.dk"

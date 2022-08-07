@@ -8,32 +8,27 @@
 import SwiftUI
 
 struct ContentView: View {
-     @State private var showAboutMe = false
-     @State private var rotationAmount = 0.0
+  @State var enteredCode = ""
+  @State var CVdata = ConstTexts()
+  @StateObject var cvDataObserved = ConstTextsObserved()
 
     var body: some View {
+      NavigationView{
+        VStack{
+          TextField("Enter CV code", text: $cvDataObserved.cvCode).background(Color(Constants.TextColors.heading)).onSubmit {
+            cvDataObserved.companyName = cvDataObserved.cvCode
+          }
+          NavigationLink(destination: RoundedBruttoCVView()){
+            Text("Complete CV")
+          }.navigationTitle("select CV").padding(.vertical)
 
-        ZStack {
-            Color(Constants.TextColors.appBackground)
-                .edgesIgnoringSafeArea(.all)
+          NavigationLink(destination: ProsaCVContentView(content: cvDataObserved)) {
+            Text("Job Specific CV")
+          }
+        }.navigationBarTitle("Navigate").padding(.horizontal)
+        ProsaCVContentView(content: cvDataObserved)
+      }
 
-            ScrollView{
-
-                VStack {
-                    TopPresentationView(rotationAmount: $rotationAmount)
-
-                    AboutMeButton(showAboutMe: $showAboutMe, rotation: $rotationAmount).rotation3DEffect(.degrees(rotationAmount), axis: (x:1,y:0,z:0))
-
-                    showAboutMe ? AboutMeSectionView(showAboutMe: $showAboutMe, rotationAmount: $rotationAmount) : nil
-
-                    ContactInfoView()
-                    Divider()
-                    showAboutMe ? nil : JobSectionView()
-                } //VStack
-
-            } //ScrollView
-
-        } //ZStack
     }
 }
 
@@ -49,3 +44,30 @@ struct ContentView_Previews: PreviewProvider {
 
 
 
+
+struct RoundedBruttoCVView: View {
+  @State private var showAboutMe = false
+  @State private var rotationAmount = 0.0
+
+  var body: some View {
+    ZStack {
+      Color(Constants.TextColors.appBackground)
+        .edgesIgnoringSafeArea(.all)
+      ScrollView{
+
+        VStack {
+          TopPresentationView(rotationAmount: $rotationAmount)
+
+          AboutMeButton(showAboutMe: $showAboutMe, rotation: $rotationAmount).rotation3DEffect(.degrees(rotationAmount), axis: (x:1,y:0,z:0))
+
+          showAboutMe ? AboutMeSectionView(showAboutMe: $showAboutMe, rotationAmount: $rotationAmount) : nil
+
+          ContactInfoView()
+          Divider()
+          showAboutMe ? nil : JobSectionView()
+        } //VStack
+
+      }
+    }
+  }
+}

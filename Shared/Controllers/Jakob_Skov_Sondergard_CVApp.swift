@@ -10,10 +10,10 @@ import SwiftUI
 @main
 struct Jakob_Skov_Sondergard_CVApp: App {
   let ct = ConstTexts()
-    var body: some Scene {
-        WindowGroup {
-            ContentView()
-        }
+  var body: some Scene {
+    WindowGroup {
+      ContentView()
     }
+  }
 }
 
