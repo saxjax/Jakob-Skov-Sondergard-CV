@@ -8,70 +8,59 @@
 import SwiftUI
 
 struct ProsaCVContentView: View {
-  @ObservedObject var content: ConstTexts
-
-  let street = ConstTexts.address.street
-  let postnumber = ConstTexts.address.postnumber
-  let city = ConstTexts.address.city
-  let country = ConstTexts.address.country
-
-  //MARK: - info position
-//  let resumeTitle = "Resume"
-//  let resumeSubTitle = ConstTexts.resumeSubTitle
-//  let positionUrl = ConstTexts.positionUrl
-  @State var resume = ConstTexts.resumeText
-
-  //MARK: - info competences
-  let competencesTitle = "Competences"
-  @State var competences = ConstTexts.competencesText
+  @ObservedObject var content: ConstTextsObserved
 
   var body: some View {
     //MARK: - info contact
     let name = content.name
     let phone = content.phone
     let mail = content.mail
+    let address = content.address
 
 
     //MARK: - info position
     let resumeTitle = "Resume"
     let resumeSubTitle = content.resumeSubTitle
     let positionUrl = content.positionUrl
+    let resume = content.resumeText
 
-
+    //MARK: - info competences
+    let competencesTitle = "Competences"
+    let competences = content.competencesText
 
     VStack {
+      TextField("Enter Company Name", text: $content.companyName)
+        .textCase(.uppercase)
+        .onSubmit {
+
+        }
       //Contact
       HStack {
-        ContactView(name: name, phone: phone, mail: mail, street: street, postnumber: postnumber, city: city, country: country)
+        ProsaContactView(name: name, phone: phone, mail: mail, street: address.street, postnumber: address.postnumber, city: address.city, country: address.country)
         Image("Jakob").resizable().aspectRatio(contentMode: .fit)
       }
       Divider()
-      //Greeting to specific position
 
       ScrollView {
 //MARK: -Resume
-        ProsaCVItemContainerView(CVItemContainerTitle: resumeTitle, CVItemContainerSubTitle: resumeSubTitle, containerUrl: positionUrl, resume: $resume)
+        ProsaCVItemContainerView(CVItemContainerTitle: resumeTitle, CVItemContainerSubTitle: resumeSubTitle, containerUrl: positionUrl, bodyContent: resume)
         Divider()
 //MARK: -Competences
-        ProsaCVItemContainerView(CVItemContainerTitle: competencesTitle, resume: $competences)
+        ProsaCVItemContainerView(CVItemContainerTitle: competencesTitle, bodyContent: competences)
       }
-
-
-
 
       //Competences, Experience, Education cronological newest first
     }
-
   }
 }
 
 struct ProsaCVContentView_Previews: PreviewProvider {
   static var previews: some View {
-    ProsaCVContentView(content: ConstTexts())
+    ProsaCVContentView(content: ConstTextsObserved())
   }
 }
 
-struct ContactView: View {
+struct ProsaContactView: View {
   let name:String
   let phone:String
   let mail:String
@@ -84,10 +73,10 @@ struct ContactView: View {
       Text(name)
       Label(phone, systemImage: "phone.fill")
       Label(mail, systemImage: "mail")
-      Label(street, systemImage: "city")
-      Label(postnumber + " " + city ,systemImage: "")
-
-      Label(country, systemImage: "")
+      Divider().padding(.horizontal)
+      Label(street, systemImage: "house")
+      Label(postnumber+" "+city, systemImage: "arrow.right")
+      Label(country, systemImage: "arrow.right")
     }
   }
 }
@@ -105,8 +94,7 @@ struct ProsaCVItemContainerView: View {
   let CVItemContainerTitle : String
   var CVItemContainerSubTitle: String? = nil
   var containerUrl : String? = nil
-
-  @Binding var resume:String
+  let bodyContent:String
 
   var body: some View {
     VStack(alignment: .leading) {
@@ -127,9 +115,8 @@ struct ProsaCVItemContainerView: View {
       }
       Divider()
       //Content
-      Text(resume)
+      Text(bodyContent)
         .multilineTextAlignment(.leading)
-      //                .frame(maxHeight: .infinity)
     }
     .padding(.horizontal)
   }
