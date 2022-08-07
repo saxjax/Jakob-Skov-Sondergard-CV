@@ -23,6 +23,18 @@
 		E41E1863289FF13B00FF4DC6 /* contentData.json in Resources */ = {isa = PBXBuildFile; fileRef = E41E1861289FF13B00FF4DC6 /* contentData.json */; };
 		E41E1864289FF13B00FF4DC6 /* contentData.json in Resources */ = {isa = PBXBuildFile; fileRef = E41E1861289FF13B00FF4DC6 /* contentData.json */; };
 		E41E1865289FF13B00FF4DC6 /* contentData.json in Resources */ = {isa = PBXBuildFile; fileRef = E41E1861289FF13B00FF4DC6 /* contentData.json */; };
+		E41E186D289FFA5B00FF4DC6 /* ProsaContactView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E41E186C289FFA5B00FF4DC6 /* ProsaContactView.swift */; };
+		E41E186E289FFA5B00FF4DC6 /* ProsaContactView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E41E186C289FFA5B00FF4DC6 /* ProsaContactView.swift */; };
+		E41E186F289FFA5B00FF4DC6 /* ProsaContactView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E41E186C289FFA5B00FF4DC6 /* ProsaContactView.swift */; };
+		E41E1870289FFA5C00FF4DC6 /* ProsaContactView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E41E186C289FFA5B00FF4DC6 /* ProsaContactView.swift */; };
+		E41E1872289FFAF700FF4DC6 /* TitleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E41E1871289FFAF700FF4DC6 /* TitleView.swift */; };
+		E41E1873289FFAF700FF4DC6 /* TitleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E41E1871289FFAF700FF4DC6 /* TitleView.swift */; };
+		E41E1874289FFAF700FF4DC6 /* TitleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E41E1871289FFAF700FF4DC6 /* TitleView.swift */; };
+		E41E1875289FFAF700FF4DC6 /* TitleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E41E1871289FFAF700FF4DC6 /* TitleView.swift */; };
+		E41E1877289FFB5F00FF4DC6 /* ProsaCVItemContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E41E1876289FFB5F00FF4DC6 /* ProsaCVItemContainerView.swift */; };
+		E41E1878289FFB5F00FF4DC6 /* ProsaCVItemContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E41E1876289FFB5F00FF4DC6 /* ProsaCVItemContainerView.swift */; };
+		E41E1879289FFB5F00FF4DC6 /* ProsaCVItemContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E41E1876289FFB5F00FF4DC6 /* ProsaCVItemContainerView.swift */; };
+		E41E187A289FFB5F00FF4DC6 /* ProsaCVItemContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E41E1876289FFB5F00FF4DC6 /* ProsaCVItemContainerView.swift */; };
 		E4368B3A289C7EFB00006E36 /* Tests_iOS.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4368B39289C7EFB00006E36 /* Tests_iOS.swift */; };
 		E4368B3C289C7EFB00006E36 /* Tests_iOSLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4368B3B289C7EFB00006E36 /* Tests_iOSLaunchTests.swift */; };
 		E4368B46289C7EFC00006E36 /* Tests_macOS.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4368B45289C7EFC00006E36 /* Tests_macOS.swift */; };
@@ -105,6 +117,9 @@
 		E41E1857289FEC7800FF4DC6 /* ConstTextsObserved.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConstTextsObserved.swift; sourceTree = "<group>"; };
 		E41E185C289FEF3000FF4DC6 /* Address.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Address.swift; sourceTree = "<group>"; };
 		E41E1861289FF13B00FF4DC6 /* contentData.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = contentData.json; sourceTree = "<group>"; };
+		E41E186C289FFA5B00FF4DC6 /* ProsaContactView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProsaContactView.swift; sourceTree = "<group>"; };
+		E41E1871289FFAF700FF4DC6 /* TitleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleView.swift; sourceTree = "<group>"; };
+		E41E1876289FFB5F00FF4DC6 /* ProsaCVItemContainerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProsaCVItemContainerView.swift; sourceTree = "<group>"; };
 		E4368B21289C7EFA00006E36 /* Jakob_Skov_Sondergard_CVApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Jakob_Skov_Sondergard_CVApp.swift; sourceTree = "<group>"; };
 		E4368B22289C7EFA00006E36 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		E4368B23289C7EFB00006E36 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -245,6 +260,9 @@
 				E48135CA289DD3ED00B82777 /* TopPresentationView.swift */,
 				E41E1866289FF86B00FF4DC6 /* ProsaCV */,
 				E41E1851289FAF0600FF4DC6 /* ProsaCVContentView.swift */,
+				E41E1876289FFB5F00FF4DC6 /* ProsaCVItemContainerView.swift */,
+				E41E1871289FFAF700FF4DC6 /* TitleView.swift */,
+				E41E186C289FFA5B00FF4DC6 /* ProsaContactView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -431,9 +449,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E41E1877289FFB5F00FF4DC6 /* ProsaCVItemContainerView.swift in Sources */,
 				E48135C6289DD14B00B82777 /* AboutMeSectionView.swift in Sources */,
 				E4368B4B289C7EFC00006E36 /* ContentView.swift in Sources */,
 				E48135CB289DD3ED00B82777 /* TopPresentationView.swift in Sources */,
+				E41E186D289FFA5B00FF4DC6 /* ProsaContactView.swift in Sources */,
 				E48135B2289DC48B00B82777 /* Secrets.swift in Sources */,
 				E4368B77289D4A2400006E36 /* CVItem.swift in Sources */,
 				E4368B81289D600C00006E36 /* ConstTexts.swift in Sources */,
@@ -444,6 +464,7 @@
 				E41E1852289FAF0600FF4DC6 /* ProsaCVContentView.swift in Sources */,
 				E4368B49289C7EFC00006E36 /* Jakob_Skov_Sondergard_CVApp.swift in Sources */,
 				E41E185D289FEF3000FF4DC6 /* Address.swift in Sources */,
+				E41E1872289FFAF700FF4DC6 /* TitleView.swift in Sources */,
 				E41E1858289FEC7800FF4DC6 /* ConstTextsObserved.swift in Sources */,
 				E4368B6D289D3F5400006E36 /* Constants.swift in Sources */,
 				E48135B7289DC5FC00B82777 /* AboutMeButton.swift in Sources */,
@@ -455,9 +476,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E41E1878289FFB5F00FF4DC6 /* ProsaCVItemContainerView.swift in Sources */,
 				E48135C7289DD14B00B82777 /* AboutMeSectionView.swift in Sources */,
 				E4368B4C289C7EFC00006E36 /* ContentView.swift in Sources */,
 				E48135CC289DD3ED00B82777 /* TopPresentationView.swift in Sources */,
+				E41E186E289FFA5B00FF4DC6 /* ProsaContactView.swift in Sources */,
 				E48135B3289DC48B00B82777 /* Secrets.swift in Sources */,
 				E4368B78289D4A2400006E36 /* CVItem.swift in Sources */,
 				E4368B82289D600C00006E36 /* ConstTexts.swift in Sources */,
@@ -468,6 +491,7 @@
 				E41E1853289FAF0600FF4DC6 /* ProsaCVContentView.swift in Sources */,
 				E4368B4A289C7EFC00006E36 /* Jakob_Skov_Sondergard_CVApp.swift in Sources */,
 				E41E185E289FEF3000FF4DC6 /* Address.swift in Sources */,
+				E41E1873289FFAF700FF4DC6 /* TitleView.swift in Sources */,
 				E41E1859289FEC7800FF4DC6 /* ConstTextsObserved.swift in Sources */,
 				E4368B6E289D3F5400006E36 /* Constants.swift in Sources */,
 				E48135B8289DC5FC00B82777 /* AboutMeButton.swift in Sources */,
@@ -479,9 +503,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E41E1879289FFB5F00FF4DC6 /* ProsaCVItemContainerView.swift in Sources */,
 				E48135C8289DD14B00B82777 /* AboutMeSectionView.swift in Sources */,
 				E4368B3C289C7EFB00006E36 /* Tests_iOSLaunchTests.swift in Sources */,
 				E48135CD289DD3ED00B82777 /* TopPresentationView.swift in Sources */,
+				E41E186F289FFA5B00FF4DC6 /* ProsaContactView.swift in Sources */,
 				E48135B4289DC48B00B82777 /* Secrets.swift in Sources */,
 				E4368B79289D4A2400006E36 /* CVItem.swift in Sources */,
 				E4368B83289D600C00006E36 /* ConstTexts.swift in Sources */,
@@ -492,6 +518,7 @@
 				E41E1854289FAF0600FF4DC6 /* ProsaCVContentView.swift in Sources */,
 				E4368B3A289C7EFB00006E36 /* Tests_iOS.swift in Sources */,
 				E41E185F289FEF3000FF4DC6 /* Address.swift in Sources */,
+				E41E1874289FFAF700FF4DC6 /* TitleView.swift in Sources */,
 				E41E185A289FEC7800FF4DC6 /* ConstTextsObserved.swift in Sources */,
 				E4368B6F289D3F5400006E36 /* Constants.swift in Sources */,
 				E48135B9289DC5FC00B82777 /* AboutMeButton.swift in Sources */,
@@ -503,9 +530,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E41E187A289FFB5F00FF4DC6 /* ProsaCVItemContainerView.swift in Sources */,
 				E48135C9289DD14B00B82777 /* AboutMeSectionView.swift in Sources */,
 				E4368B48289C7EFC00006E36 /* Tests_macOSLaunchTests.swift in Sources */,
 				E48135CE289DD3ED00B82777 /* TopPresentationView.swift in Sources */,
+				E41E1870289FFA5C00FF4DC6 /* ProsaContactView.swift in Sources */,
 				E48135B5289DC48B00B82777 /* Secrets.swift in Sources */,
 				E4368B7A289D4A2400006E36 /* CVItem.swift in Sources */,
 				E4368B84289D600C00006E36 /* ConstTexts.swift in Sources */,
@@ -516,6 +545,7 @@
 				E41E1855289FAF0600FF4DC6 /* ProsaCVContentView.swift in Sources */,
 				E4368B46289C7EFC00006E36 /* Tests_macOS.swift in Sources */,
 				E41E1860289FEF3000FF4DC6 /* Address.swift in Sources */,
+				E41E1875289FFAF700FF4DC6 /* TitleView.swift in Sources */,
 				E41E185B289FEC7800FF4DC6 /* ConstTextsObserved.swift in Sources */,
 				E4368B70289D3F5400006E36 /* Constants.swift in Sources */,
 				E48135BA289DC5FC00B82777 /* AboutMeButton.swift in Sources */,
