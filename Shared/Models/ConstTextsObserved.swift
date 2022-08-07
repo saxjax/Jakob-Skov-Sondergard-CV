@@ -1,33 +1,31 @@
 //
-//  ConstTexts.swift
+//  ConstTextsObserved.swift
 //  Jakob Skov Sondergard CV
 //
-//  Created by Jakob Skov Søndergård on 05/08/2022.
+//  Created by Jakob Skov Søndergård on 07/08/2022.
 //
 
 import Foundation
-class ConstTexts:ObservableObject{
-  static let name = "Jakob Skov Søndergård"
-  static let phone = "+45 53379559"
-  static let mail = "jakob@saxjax.dk"
-  struct address {
-    static let street = "Rolighedsvej 5"
-    static let postnumber = "9510"
-    static let city = "Arden"
-    static let country = "Denmark"
-  }
-  static let resumeSubTitle = """
+class ConstTextsObserved:ObservableObject{
+  @Published var cvCode = "123456"
+  @Published var name = "Jakob Skov Søndergård"
+  @Published var phone = "+45 53379559"
+  @Published var mail = "jakob@saxjax.dk"
+  @Published var address = Address(street:"Rolighedsvej 5",postnumber:"9510",city:"Arden",country:"Denmark")
+
+
+  @Published var resumeSubTitle = """
                               Hi Track Unit
                               This CV is aimed at the position as iOS developer at Track Unit:
                               """
-  static let companyName = "Track Unit"
-  static let positionUrl = "http://saxjax.dk"
-  static let resumeText = """
+  @Published var companyName = "Track Unit"
+  @Published var positionUrl = "http://saxjax.dk"
+  @Published var resumeText = """
                         Beskriv personlige egenskaber,så de modsvarer stillingens kravspecifikationer.
                         Egenskaber Fordele Udbytte
                         Dit kendskab til og erfaring med teknologier / metoder, så de modsvarer stillingen
                         """
-  static let competencesText = """
+  @Published var competencesText = """
                           Hvad er virksomhedens behov?
                           hvilke af dine personlige egenskaber dækker bedst
                           hvilke an mine faglige kompetencer er de vigtigste.

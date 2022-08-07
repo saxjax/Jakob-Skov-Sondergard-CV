@@ -1,0 +1,41 @@
+/*content*/
+{
+  content:{
+    sections:{
+      [
+      contactInfo:{
+        name:"name",
+        phone: "",
+        mail:""
+        address:{
+          street:"",
+          postnumber:"",
+          city:"",
+          country:""
+        }
+      },
+      resume: {
+        title: "Resume",
+        subtitle:"",
+        url:"",
+        items: []
+
+      },
+      competences:{
+        title: "Competences",
+        subtitle:"",
+        items: []
+      }
+      ]
+    }
+  }
+}
+
+/*CV Item*/
+{
+  item:{
+    id:number,
+    title:"",
+    body:"",
+  }
+}
