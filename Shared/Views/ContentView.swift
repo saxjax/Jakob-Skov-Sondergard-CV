@@ -8,13 +8,15 @@
 import SwiftUI
 
 struct ContentView: View {
-  @State var enteredCode = ""
+  @State var enteredEmail = "1@2.dk"
+  @State var enteredCode = "123456"
   @State var CVdata = ConstTexts()
   @StateObject var cvDataObserved = ConstTextsObserved()
 
     var body: some View {
       NavigationView{
         VStack{
+          CVRegistrationAndRetrievalView(username: $enteredEmail, cvname: $enteredCode, authHandler: AuthenticationHandler())
           TextField("Enter CV code", text: $cvDataObserved.cvCode).background(Color(Constants.TextColors.heading)).onSubmit {
             cvDataObserved.companyName = cvDataObserved.cvCode
           }
@@ -25,7 +27,7 @@ struct ContentView: View {
           NavigationLink(destination: ProsaCVContentView(content: cvDataObserved)) {
             Text("Job Specific CV")
           }
-        }.navigationBarTitle("Navigate").padding(.horizontal)
+        }//.navigationBarTitle("Navigate").padding(.horizontal)
         ProsaCVContentView(content: cvDataObserved)
       }
 

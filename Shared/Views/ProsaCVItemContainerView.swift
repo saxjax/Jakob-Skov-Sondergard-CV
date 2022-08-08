@@ -6,6 +6,8 @@
 //
 
 import SwiftUI
+import Foundation
+
 
 struct ProsaCVItemContainerView: View {
   let CVItemContainerTitle : String
@@ -23,7 +25,7 @@ struct ProsaCVItemContainerView: View {
 
         if #available(iOS 16.0, *) {
           (containerUrl != nil) ?
-          Text(URL(string: containerUrl!) ?? URL(string: "http://saxjax.dk")!, format: .url) : nil
+          Text("\(URL(string: containerUrl!) ?? URL(string: "http://saxjax.dk")!)") : nil
         }
         else {
           (containerUrl != nil) ?
