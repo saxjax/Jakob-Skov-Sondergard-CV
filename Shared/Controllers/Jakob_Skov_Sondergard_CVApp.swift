@@ -34,5 +34,5 @@ struct Jakob_Skov_Sondergard_CVApp: App {
         }
     }
   }
-}
+
 
