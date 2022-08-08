@@ -2,7 +2,9 @@
 Secrets.*
 *.DS_Store
 *.xcworkspace/
-*GoogleService-Info.plist
+GoogleService-Info.plist
+GoogleService-*
+
 
 # Xcode
 #
