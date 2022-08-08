@@ -31,8 +31,8 @@ jobs:
           run: xcrun simctl list --json devices available | grep iOS && xcrun simctl list --json devices available | grep name
           
 
-        - name: Run unit test
-          run:  xcodebuild test -scheme Jakob\ Skov\ Sondergard\ CV\ \(iOS\) -project Jakob\ Skov\ Sondergard\ CV.xcodeproj -destination 'platform=iOS Simulator,name=iPhone 13,OS=15.0' | xcpretty && exit ${PIPESTATUS[0]}
+#      - name: Run unit test
+#         run:  xcodebuild test -scheme Jakob\ Skov\ Sondergard\ CV\ \(iOS\) -project Jakob\ Skov\ Sondergard\ CV.xcodeproj -destination 'platform=iOS Simulator,name=iPhone 13,OS=15.0' | xcpretty && exit ${PIPESTATUS[0]}
 
 #       - name: Build archive
 #         run: |
