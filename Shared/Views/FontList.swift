@@ -4,12 +4,16 @@
 //
 //  Created by Jakob Skov Søndergård on 05/08/2022.
 //
-
+import Foundation
 import SwiftUI
 
 struct FontList: View {
+#if os(iOS)
     let allFontNames = UIFont.familyNames
         .flatMap { UIFont.fontNames(forFamilyName: $0) }
+#else
+  let allFontNames = ["no","fonts","canbe listed on mac"]
+#endif
 
     var body: some View {
         List(allFontNames, id: \.self) { name in
@@ -17,6 +21,7 @@ struct FontList: View {
                 .font(Font.custom(name, size: 12))
         }
     }
+
 }
 
 struct FontList_Previews: PreviewProvider {
