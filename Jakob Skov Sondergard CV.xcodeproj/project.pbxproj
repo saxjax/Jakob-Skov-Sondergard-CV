@@ -79,6 +79,14 @@
 		E4C91B5228A12BE70072F694 /* FirebaseFirestoreSwift in Frameworks */ = {isa = PBXBuildFile; productRef = E4C91B5128A12BE70072F694 /* FirebaseFirestoreSwift */; };
 		E4C91B5528A12EE90072F694 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = E4C91B5428A12EE90072F694 /* FirebaseAuth */; };
 		E4C91B5728A12EE90072F694 /* FirebaseFirestoreSwift in Frameworks */ = {isa = PBXBuildFile; productRef = E4C91B5628A12EE90072F694 /* FirebaseFirestoreSwift */; };
+		E4C91B6128A148AC0072F694 /* AuthenticationHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4C91B6028A148AC0072F694 /* AuthenticationHandler.swift */; };
+		E4C91B6228A148AC0072F694 /* AuthenticationHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4C91B6028A148AC0072F694 /* AuthenticationHandler.swift */; };
+		E4C91B6328A148AC0072F694 /* AuthenticationHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4C91B6028A148AC0072F694 /* AuthenticationHandler.swift */; };
+		E4C91B6428A148AC0072F694 /* AuthenticationHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4C91B6028A148AC0072F694 /* AuthenticationHandler.swift */; };
+		E4C91B6628A14A010072F694 /* CVRegistrationAndRetrievalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4C91B6528A14A010072F694 /* CVRegistrationAndRetrievalView.swift */; };
+		E4C91B6728A14A010072F694 /* CVRegistrationAndRetrievalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4C91B6528A14A010072F694 /* CVRegistrationAndRetrievalView.swift */; };
+		E4C91B6828A14A010072F694 /* CVRegistrationAndRetrievalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4C91B6528A14A010072F694 /* CVRegistrationAndRetrievalView.swift */; };
+		E4C91B6928A14A010072F694 /* CVRegistrationAndRetrievalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4C91B6528A14A010072F694 /* CVRegistrationAndRetrievalView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -124,6 +132,8 @@
 		E48135C0289DCC8600B82777 /* ContactInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactInfoView.swift; sourceTree = "<group>"; };
 		E48135C5289DD14B00B82777 /* AboutMeSectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutMeSectionView.swift; sourceTree = "<group>"; };
 		E48135CA289DD3ED00B82777 /* TopPresentationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopPresentationView.swift; sourceTree = "<group>"; };
+		E4C91B6028A148AC0072F694 /* AuthenticationHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationHandler.swift; sourceTree = "<group>"; };
+		E4C91B6528A14A010072F694 /* CVRegistrationAndRetrievalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CVRegistrationAndRetrievalView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -242,6 +252,7 @@
 				E48135C0289DCC8600B82777 /* ContactInfoView.swift */,
 				E48135C5289DD14B00B82777 /* AboutMeSectionView.swift */,
 				E48135CA289DD3ED00B82777 /* TopPresentationView.swift */,
+				E4C91B6528A14A010072F694 /* CVRegistrationAndRetrievalView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -259,6 +270,7 @@
 			isa = PBXGroup;
 			children = (
 				E4368B21289C7EFA00006E36 /* Jakob_Skov_Sondergard_CVApp.swift */,
+				E4C91B6028A148AC0072F694 /* AuthenticationHandler.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -453,6 +465,7 @@
 				E4368B4B289C7EFC00006E36 /* ContentView.swift in Sources */,
 				E48135CB289DD3ED00B82777 /* TopPresentationView.swift in Sources */,
 				E48135B2289DC48B00B82777 /* Secrets.swift in Sources */,
+				E4C91B6128A148AC0072F694 /* AuthenticationHandler.swift in Sources */,
 				E4368B77289D4A2400006E36 /* CVItem.swift in Sources */,
 				E4368B81289D600C00006E36 /* ConstTexts.swift in Sources */,
 				E4368B68289C86E000006E36 /* SimpleInfoView.swift in Sources */,
@@ -463,6 +476,7 @@
 				E4368B6D289D3F5400006E36 /* Constants.swift in Sources */,
 				E48135B7289DC5FC00B82777 /* AboutMeButton.swift in Sources */,
 				E48135C1289DCC8600B82777 /* ContactInfoView.swift in Sources */,
+				E4C91B6628A14A010072F694 /* CVRegistrationAndRetrievalView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -474,8 +488,10 @@
 				E4368B4C289C7EFC00006E36 /* ContentView.swift in Sources */,
 				E48135CC289DD3ED00B82777 /* TopPresentationView.swift in Sources */,
 				E48135B3289DC48B00B82777 /* Secrets.swift in Sources */,
+				E4C91B6228A148AC0072F694 /* AuthenticationHandler.swift in Sources */,
 				E4368B78289D4A2400006E36 /* CVItem.swift in Sources */,
 				E4368B82289D600C00006E36 /* ConstTexts.swift in Sources */,
+				E4C91B6728A14A010072F694 /* CVRegistrationAndRetrievalView.swift in Sources */,
 				E4368B69289C86E000006E36 /* SimpleInfoView.swift in Sources */,
 				E4368B7D289D55AB00006E36 /* CVSectionView.swift in Sources */,
 				E4368B73289D462200006E36 /* FontList.swift in Sources */,
@@ -495,8 +511,10 @@
 				E4368B3C289C7EFB00006E36 /* Tests_iOSLaunchTests.swift in Sources */,
 				E48135CD289DD3ED00B82777 /* TopPresentationView.swift in Sources */,
 				E48135B4289DC48B00B82777 /* Secrets.swift in Sources */,
+				E4C91B6328A148AC0072F694 /* AuthenticationHandler.swift in Sources */,
 				E4368B79289D4A2400006E36 /* CVItem.swift in Sources */,
 				E4368B83289D600C00006E36 /* ConstTexts.swift in Sources */,
+				E4C91B6828A14A010072F694 /* CVRegistrationAndRetrievalView.swift in Sources */,
 				E4368B6A289C86E000006E36 /* SimpleInfoView.swift in Sources */,
 				E4368B7E289D55AB00006E36 /* CVSectionView.swift in Sources */,
 				E4368B74289D462200006E36 /* FontList.swift in Sources */,
@@ -516,8 +534,10 @@
 				E4368B48289C7EFC00006E36 /* Tests_macOSLaunchTests.swift in Sources */,
 				E48135CE289DD3ED00B82777 /* TopPresentationView.swift in Sources */,
 				E48135B5289DC48B00B82777 /* Secrets.swift in Sources */,
+				E4C91B6428A148AC0072F694 /* AuthenticationHandler.swift in Sources */,
 				E4368B7A289D4A2400006E36 /* CVItem.swift in Sources */,
 				E4368B84289D600C00006E36 /* ConstTexts.swift in Sources */,
+				E4C91B6928A14A010072F694 /* CVRegistrationAndRetrievalView.swift in Sources */,
 				E4368B6B289C86E000006E36 /* SimpleInfoView.swift in Sources */,
 				E4368B7F289D55AB00006E36 /* CVSectionView.swift in Sources */,
 				E4368B75289D462200006E36 /* FontList.swift in Sources */,
@@ -734,7 +754,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = YES;
 				CODE_SIGN_ENTITLEMENTS = macOS/macOS.entitlements;
-				CODE_SIGN_IDENTITY = "-";
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 3;
