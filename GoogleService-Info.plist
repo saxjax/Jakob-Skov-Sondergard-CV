@@ -19,16 +19,18 @@
 	<key>STORAGE_BUCKET</key>
 	<string>saxjaxcv.appspot.com</string>
 	<key>IS_ADS_ENABLED</key>
-	<false></false>
+	<false/>
 	<key>IS_ANALYTICS_ENABLED</key>
-	<false></false>
+	<false/>
 	<key>IS_APPINVITE_ENABLED</key>
-	<true></true>
+	<true/>
 	<key>IS_GCM_ENABLED</key>
-	<true></true>
+	<true/>
 	<key>IS_SIGNIN_ENABLED</key>
-	<true></true>
+	<true/>
 	<key>GOOGLE_APP_ID</key>
 	<string>1:232584769822:ios:3ef283f87cefbd394a590f</string>
+	<key>NSHumanReadableCopyright</key>
+	<string>Jakob</string>
 </dict>
 </plist>

@@ -6,6 +6,7 @@
 //
 
 import XCTest
+import Firebase
 
 class Tests_iOS: XCTestCase {
 
@@ -26,6 +27,13 @@ class Tests_iOS: XCTestCase {
         // UI tests must launch the application that they test.
         let app = XCUIApplication()
         app.launch()
+//      arrange
+      FirebaseApp.configure()
+
+//      act
+      let _ = Firestore.firestore()
+//      assert
+//      assert(db != nil)
 
         // Use XCTAssert and related functions to verify your tests produce the correct results.
     }
