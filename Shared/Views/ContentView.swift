@@ -19,6 +19,7 @@ struct ContentView: View {
           CVRegistrationAndRetrievalView(username: $enteredEmail, cvname: $enteredCode, authHandler: AuthenticationHandler())
           TextField("Enter CV code", text: $cvDataObserved.cvCode).background(Color(Constants.TextColors.heading)).onSubmit {
             cvDataObserved.companyName = cvDataObserved.cvCode
+
           }
           NavigationLink(destination: RoundedBruttoCVView()){
             Text("Complete CV")

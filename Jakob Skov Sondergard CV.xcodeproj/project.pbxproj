@@ -68,6 +68,8 @@
 		E498C3B128A1B1BB00FA870A /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = E498C3AF28A1B1BB00FA870A /* GoogleService-Info.plist */; };
 		E498C3B228A1B1BB00FA870A /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = E498C3AF28A1B1BB00FA870A /* GoogleService-Info.plist */; };
 		E498C3B328A1B1BB00FA870A /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = E498C3AF28A1B1BB00FA870A /* GoogleService-Info.plist */; };
+		E4C40FC628A28AE20086D137 /* Tests_AuthenticationHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4C40FC528A28AE20086D137 /* Tests_AuthenticationHandler.swift */; };
+		E4C40FC728A28AE20086D137 /* Tests_AuthenticationHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4C40FC528A28AE20086D137 /* Tests_AuthenticationHandler.swift */; };
 		E4C91B4928A108E90072F694 /* FirebaseAnalyticsSwift in Frameworks */ = {isa = PBXBuildFile; productRef = E4C91B4828A108E90072F694 /* FirebaseAnalyticsSwift */; };
 		E4C91B4B28A108E90072F694 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = E4C91B4A28A108E90072F694 /* FirebaseAuth */; };
 		E4C91B4D28A108E90072F694 /* FirebaseFirestoreSwift in Frameworks */ = {isa = PBXBuildFile; productRef = E4C91B4C28A108E90072F694 /* FirebaseFirestoreSwift */; };
@@ -159,6 +161,7 @@
 		E48135C5289DD14B00B82777 /* AboutMeSectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutMeSectionView.swift; sourceTree = "<group>"; };
 		E48135CA289DD3ED00B82777 /* TopPresentationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopPresentationView.swift; sourceTree = "<group>"; };
 		E498C3AF28A1B1BB00FA870A /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		E4C40FC528A28AE20086D137 /* Tests_AuthenticationHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tests_AuthenticationHandler.swift; sourceTree = "<group>"; };
 		E4C91B6028A148AC0072F694 /* AuthenticationHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationHandler.swift; sourceTree = "<group>"; };
 		E4C91B6528A14A010072F694 /* CVRegistrationAndRetrievalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CVRegistrationAndRetrievalView.swift; sourceTree = "<group>"; };
 		E4E3310A28A1AE0400667476 /* ProsaCVItemContainerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProsaCVItemContainerView.swift; sourceTree = "<group>"; };
@@ -262,6 +265,7 @@
 			children = (
 				E4368B39289C7EFB00006E36 /* Tests_iOS.swift */,
 				E4368B3B289C7EFB00006E36 /* Tests_iOSLaunchTests.swift */,
+				E4C40FC528A28AE20086D137 /* Tests_AuthenticationHandler.swift */,
 			);
 			path = "Tests iOS";
 			sourceTree = "<group>";
@@ -565,6 +569,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E4C40FC628A28AE20086D137 /* Tests_AuthenticationHandler.swift in Sources */,
 				E48135C8289DD14B00B82777 /* AboutMeSectionView.swift in Sources */,
 				E4368B3C289C7EFB00006E36 /* Tests_iOSLaunchTests.swift in Sources */,
 				E4E3311028A1AE0400667476 /* ProsaCVItemContainerView.swift in Sources */,
@@ -594,6 +599,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E4C40FC728A28AE20086D137 /* Tests_AuthenticationHandler.swift in Sources */,
 				E48135C9289DD14B00B82777 /* AboutMeSectionView.swift in Sources */,
 				E4368B48289C7EFC00006E36 /* Tests_macOSLaunchTests.swift in Sources */,
 				E4E3311128A1AE0400667476 /* ProsaCVItemContainerView.swift in Sources */,

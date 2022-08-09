@@ -6,7 +6,7 @@
 //
 
 import Foundation
-import FirebaseAuth
+import Firebase
 class AuthenticationHandler:ObservableObject {
   @Published var isLoggedIn = false
   @Published var userEmail:String? = nil
@@ -43,7 +43,20 @@ class AuthenticationHandler:ObservableObject {
 
   }
 
-  func addDataToCV(email:String,cvname:String,data:Data){
+  func addDataToCV(email:String,password:String,cvname:String,data:Data?, db:Firestore){
+    if let content = data, let user = Auth.auth().currentUser {
+      db.collection("cv").addDocument(data:["cvId":cvname,
+                                            "cvBody":content]){ (error) in
+        if let e = error {
+          self.stateMessage = e.localizedDescription
+        }
+        else {
+          self.stateMessage = "Successfully saved CV"
+        }
+      }
+    }
+
+
 
   }
 

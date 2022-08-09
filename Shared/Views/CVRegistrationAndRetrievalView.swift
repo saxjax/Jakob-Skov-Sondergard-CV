@@ -31,7 +31,7 @@ struct CVRegistrationAndRetrievalView: View {
           }
         }
 //#endif
-        Button("Get CV"){
+        Button("Login"){
           print(username,cvname)
           if username.isEmpty || cvname.isEmpty {
             print("you must fill in some values into both username and password")
