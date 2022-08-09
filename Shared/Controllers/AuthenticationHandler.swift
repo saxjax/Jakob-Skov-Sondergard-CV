@@ -47,10 +47,10 @@ class AuthenticationHandler:ObservableObject {
     if isLoggedIn == true {
       if let content = data, let user = Auth.auth().currentUser?.email {
         let db = Firestore.firestore()
-        db.collection(cvname).addDocument(
+        db.collection("\(user):\(content.cvCode)").addDocument(
           data:[
             "user" : user,
-            "cvCode" : user + ":" + content.cvCode,
+            "cvCode" : content.cvCode,
             "name" : content.name,
             "phone" : content.phone,
             "mail" : content.mail
