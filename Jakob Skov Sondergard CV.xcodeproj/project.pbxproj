@@ -85,6 +85,10 @@
 		E4C91B6728A14A010072F694 /* CVRegistrationAndRetrievalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4C91B6528A14A010072F694 /* CVRegistrationAndRetrievalView.swift */; };
 		E4C91B6828A14A010072F694 /* CVRegistrationAndRetrievalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4C91B6528A14A010072F694 /* CVRegistrationAndRetrievalView.swift */; };
 		E4C91B6928A14A010072F694 /* CVRegistrationAndRetrievalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4C91B6528A14A010072F694 /* CVRegistrationAndRetrievalView.swift */; };
+		E4C980CD28A2EF0F00C81EA8 /* CVContent.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4C980CC28A2EF0F00C81EA8 /* CVContent.swift */; };
+		E4C980CE28A2EF0F00C81EA8 /* CVContent.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4C980CC28A2EF0F00C81EA8 /* CVContent.swift */; };
+		E4C980CF28A2EF0F00C81EA8 /* CVContent.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4C980CC28A2EF0F00C81EA8 /* CVContent.swift */; };
+		E4C980D028A2EF0F00C81EA8 /* CVContent.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4C980CC28A2EF0F00C81EA8 /* CVContent.swift */; };
 		E4E3310E28A1AE0400667476 /* ProsaCVItemContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4E3310A28A1AE0400667476 /* ProsaCVItemContainerView.swift */; };
 		E4E3310F28A1AE0400667476 /* ProsaCVItemContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4E3310A28A1AE0400667476 /* ProsaCVItemContainerView.swift */; };
 		E4E3311028A1AE0400667476 /* ProsaCVItemContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4E3310A28A1AE0400667476 /* ProsaCVItemContainerView.swift */; };
@@ -164,6 +168,7 @@
 		E4C40FC528A28AE20086D137 /* Tests_AuthenticationHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tests_AuthenticationHandler.swift; sourceTree = "<group>"; };
 		E4C91B6028A148AC0072F694 /* AuthenticationHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationHandler.swift; sourceTree = "<group>"; };
 		E4C91B6528A14A010072F694 /* CVRegistrationAndRetrievalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CVRegistrationAndRetrievalView.swift; sourceTree = "<group>"; };
+		E4C980CC28A2EF0F00C81EA8 /* CVContent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CVContent.swift; sourceTree = "<group>"; };
 		E4E3310A28A1AE0400667476 /* ProsaCVItemContainerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProsaCVItemContainerView.swift; sourceTree = "<group>"; };
 		E4E3310B28A1AE0400667476 /* ProsaCVContentView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProsaCVContentView.swift; sourceTree = "<group>"; };
 		E4E3310C28A1AE0400667476 /* TitleView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TitleView.swift; sourceTree = "<group>"; };
@@ -308,6 +313,7 @@
 				E4E3312228A1AE1F00667476 /* ConstTexts.swift */,
 				E4E3312328A1AE1F00667476 /* contentData.json */,
 				E4368B76289D4A2400006E36 /* CVItem.swift */,
+				E4C980CC28A2EF0F00C81EA8 /* CVContent.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -529,6 +535,7 @@
 				E4368B49289C7EFC00006E36 /* Jakob_Skov_Sondergard_CVApp.swift in Sources */,
 				E4E3311628A1AE0400667476 /* TitleView.swift in Sources */,
 				E4368B6D289D3F5400006E36 /* Constants.swift in Sources */,
+				E4C980CD28A2EF0F00C81EA8 /* CVContent.swift in Sources */,
 				E48135B7289DC5FC00B82777 /* AboutMeButton.swift in Sources */,
 				E48135C1289DCC8600B82777 /* ContactInfoView.swift in Sources */,
 				E4E3312828A1AE1F00667476 /* Address.swift in Sources */,
@@ -558,6 +565,7 @@
 				E48135BD289DCBB900B82777 /* JobSectionView.swift in Sources */,
 				E4E3311728A1AE0400667476 /* TitleView.swift in Sources */,
 				E4368B4A289C7EFC00006E36 /* Jakob_Skov_Sondergard_CVApp.swift in Sources */,
+				E4C980CE28A2EF0F00C81EA8 /* CVContent.swift in Sources */,
 				E4368B6E289D3F5400006E36 /* Constants.swift in Sources */,
 				E48135B8289DC5FC00B82777 /* AboutMeButton.swift in Sources */,
 				E4E3312928A1AE1F00667476 /* Address.swift in Sources */,
@@ -575,6 +583,7 @@
 				E4E3311028A1AE0400667476 /* ProsaCVItemContainerView.swift in Sources */,
 				E4E3312E28A1AE1F00667476 /* ConstTextsObserved.swift in Sources */,
 				E48135CD289DD3ED00B82777 /* TopPresentationView.swift in Sources */,
+				E4C980CF28A2EF0F00C81EA8 /* CVContent.swift in Sources */,
 				E48135B4289DC48B00B82777 /* Secrets.swift in Sources */,
 				E4E3311C28A1AE0400667476 /* ProsaContactView.swift in Sources */,
 				E4C91B6328A148AC0072F694 /* AuthenticationHandler.swift in Sources */,
@@ -605,6 +614,7 @@
 				E4E3311128A1AE0400667476 /* ProsaCVItemContainerView.swift in Sources */,
 				E4E3312F28A1AE1F00667476 /* ConstTextsObserved.swift in Sources */,
 				E48135CE289DD3ED00B82777 /* TopPresentationView.swift in Sources */,
+				E4C980D028A2EF0F00C81EA8 /* CVContent.swift in Sources */,
 				E48135B5289DC48B00B82777 /* Secrets.swift in Sources */,
 				E4E3311D28A1AE0400667476 /* ProsaContactView.swift in Sources */,
 				E4C91B6428A148AC0072F694 /* AuthenticationHandler.swift in Sources */,

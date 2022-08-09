@@ -43,7 +43,7 @@ class ConstTextsObserved:ObservableObject{
 
                           Resultat: Blev det en success, så beskriv hvad der lykkedes - ellers beskriv hvad du lærte
                           """
-  static let aboutMe = [
+   let aboutMe = [
     CVItem(id: 1, title: "Me and Programming", body: """
     My big programming passion lays in apples ecosystem of devices and the Swift programming language.
     I appreciate the process of building tools that help people solving tasks of any kind, and this passion is what drove me towards a carrier change from performing arts into building "stuff".
@@ -57,7 +57,7 @@ class ConstTextsObserved:ObservableObject{
     """)
 
   ]
-  static let ultraResume = [
+   let ultraResume = [
     CVItem(id: 16, title: """
 2021-Present
 Freelance Product owner and Software engineer on product NOTIO at NOVIA
@@ -161,7 +161,7 @@ Born in Århus
 """,
            body: nil)
   ]
-  static let education = [
+   let education = [
     CVItem(id: 0,
            title: "June 2022 Aalborg",
            body: """
@@ -186,7 +186,7 @@ Master of Music
 """
           )
   ]
-  static let experience:[CVItem] = [
+   let experience:[CVItem] = [
     CVItem(id:0,
            title:"""
 Software Engineer | Novia, Jakobsstad Finland.
@@ -214,7 +214,7 @@ Designed, developed and shipped a simple math learning IOS application (saxjax D
 This little app that you are looking at is developed in swiftUI.
 """)
   ]
-  static let studyRelatedExperience:[CVItem] = [
+   let studyRelatedExperience:[CVItem] = [
     CVItem(id:0,
            title:"""
                 Student Software Engineer | Turf Tank, Hjoerring.
@@ -242,7 +242,7 @@ This little app that you are looking at is developed in swiftUI.
                   """
           )
   ]
-  static let publications:[CVItem] = [
+   let publications:[CVItem] = [
     CVItem(id:0,
            title:"""
                 Bachelor’s Project - AI-driven smart washing machines,
@@ -335,7 +335,7 @@ This little app that you are looking at is developed in swiftUI.
                 OBS: report is in Danish.
                 """)
   ]
-  static let languages = [
+   let languages = [
     CVItem(id: 0, title: "", body: "Swift"),
     CVItem(id: 1, title: "", body: "SwiftUI"),
     CVItem(id: 2, title: "", body: "Dart and Flutter"),
@@ -347,7 +347,7 @@ This little app that you are looking at is developed in swiftUI.
 
 
   ]
-  static let frameworks = [
+   let frameworks = [
     CVItem(id: 0, title: "Xcode", body: "including Interface builder, auto layout, SwiftUI with previews, Playground,  debugging, CreateML, Extensions and protocols, delegates, pods, swift package manager, Publishing to the app store and more."),
     CVItem(id: 1, title: "React.js", body: "including portals, callbacks, jest, node, sass, BEM-naming."),
     CVItem(id: 2, title: "Flutter framework", body: " "),
@@ -359,7 +359,7 @@ This little app that you are looking at is developed in swiftUI.
     CVItem(id: 8, title: "Visual Studio", body: ""),
     CVItem(id: 9, title: "Visual Studio Code", body: "This is my preferred IDE for JavaScript and Python"),
   ]
-  static let capabilities:[CVItem] = [
+   let capabilities:[CVItem] = [
     CVItem(id:0,title:"Project Management",
            body:"""
     Trello

@@ -43,10 +43,32 @@ class AuthenticationHandler:ObservableObject {
 
   }
 
-  func addDataToCV(email:String,password:String,cvname:String,data:Data?, db:Firestore){
-    if let content = data, let user = Auth.auth().currentUser {
-      db.collection("cv").addDocument(data:["cvId":cvname,
-                                            "cvBody":content]){ (error) in
+  func addDataToCV(email:String,password:String,cvname:String, data:CVContent?){
+    if let content = data, let user = Auth.auth().currentUser?.email {
+      let db = Firestore.firestore()
+      db.collection(cvname).addDocument(
+        data:[
+          "user" : user,
+          "cvCode" : content.cvCode,
+          "name" : content.name,
+          "phone" : content.phone,
+          "mail" : content.mail
+//          "address" : content.address,
+//          "resumeSubTitle" : content.resumeSubTitle,
+//          "companyName" : content.companyName,
+//          "positionUrl" : content.positionUrl,
+//          "resumeText" : content.resumeText,
+//          "competencesText" : content.competencesText,
+//          "aboutMe" : content.aboutMe,
+//          "ultraResume" : content.ultraResume,
+//          "education" : content.education,
+//          "experience" : content.experience,
+//          "studyRelatedExperience" : content.studyRelatedExperience,
+//          "publications"  : content.publications,
+//          "languages" : content.languages,
+//          "frameworks" : content.frameworks,
+//          "capabilities" : content.capabilities
+        ]){ (error) in
         if let e = error {
           self.stateMessage = e.localizedDescription
         }

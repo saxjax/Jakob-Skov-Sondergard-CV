@@ -6,7 +6,7 @@
 //
 
 import Foundation
-struct CVItem {
+struct CVItem:Codable {
     let id:Int
     let title:String
     let body:String?

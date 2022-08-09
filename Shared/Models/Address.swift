@@ -6,7 +6,7 @@
 //
 
 import Foundation
-struct Address {
+struct Address:Codable {
   let street:String
   let postnumber:String
   let city:String
