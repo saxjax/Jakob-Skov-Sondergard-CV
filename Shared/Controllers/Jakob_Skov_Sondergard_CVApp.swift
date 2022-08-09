@@ -20,6 +20,7 @@ import Firebase
 @main
 struct Jakob_Skov_Sondergard_CVApp: App {
 //  @UIApplicationDelegateAdaptor(AppDelegate.self) var delegate
+
   init(){
     FirebaseApp.configure()
     let db = Firestore.firestore()
@@ -27,6 +28,8 @@ struct Jakob_Skov_Sondergard_CVApp: App {
     print("I got a database!:\(db)\n")
     
   }
+
+  @StateObject var authHandler = AuthenticationHandler()
 
     var body: some Scene {
         WindowGroup {

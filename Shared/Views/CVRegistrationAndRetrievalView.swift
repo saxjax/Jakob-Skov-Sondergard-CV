@@ -12,28 +12,25 @@ struct CVRegistrationAndRetrievalView: View {
   @Binding var username:String
   @Binding var cvname:String
   @StateObject var authHandler: AuthenticationHandler
+
   var body: some View {
     VStack {
       Text("Email and CV ")
       TextField("user email",text: $username)
       TextField("unique 6 cipher CV name", text: $cvname)
+      authHandler.stateMessage != nil ? Text("Status:\(authHandler.stateMessage! )"):nil
       HStack {
-#if os(macOS)
+//#if os(macOS)
         Button("Register new CV"){
 
           if username.isEmpty || cvname.isEmpty {
             print("you must fill in some values into both username and password")
           }
           else {
-            do{
-              try authHandler.registerNewCV(email: self.username, cvname: self.cvname)
-              
-            }catch{
-              //TODO:Create throwing function
-            }
+            authHandler.registerNewCV(email: self.username, cvname: self.cvname)
           }
         }
-#endif
+//#endif
         Button("Get CV"){
           print(username,cvname)
           if username.isEmpty || cvname.isEmpty {
@@ -43,6 +40,11 @@ struct CVRegistrationAndRetrievalView: View {
             authHandler.loginToExistingCV(email: self.username, cvname: self.cvname)
           }
         }
+
+        authHandler.isLoggedIn ? Button("LogOut"){
+          authHandler.logOut()
+          print("logged out")
+        } :nil
       }
 
 

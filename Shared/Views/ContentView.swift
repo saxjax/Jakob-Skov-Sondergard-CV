@@ -12,7 +12,7 @@ struct ContentView: View {
   @State var enteredCode = "123456"
   @State var CVdata = ConstTexts()
   @StateObject var cvDataObserved = ConstTextsObserved()
-
+  
     var body: some View {
       NavigationView{
         VStack{
