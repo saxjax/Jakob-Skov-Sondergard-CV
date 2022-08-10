@@ -83,13 +83,24 @@ class AuthenticationHandler:ObservableObject {
 
   func fetchData(collectionName:String){
     let db = Firestore.firestore()
-    db.collection(collectionName).document("cv_content").getDocument { document, error in
-      if let document = document, document.exists {
-        let dataDescription = document.data().map(String.init(describing:)) ?? "nil"
-        print("Document data: \(dataDescription)")
-      } else {
-        print("Document does not exist")
+    db.collection(collectionName).getDocuments() { documents, error in
+      if let e = error {
+        DispatchQueue.main.async {
+        self.stateMessage = e.localizedDescription
+        }
       }
+      else {
+        for document in documents!.documents {
+          print("\(document.documentID) => \(document.data()["cv_content"])")
+        }
+      }
+//      if let document = documents, document.exists {
+//        let dataDescription = document.data().map(String.init(describing:)) ?? "nil"
+//        print("Document data: \(dataDescription)")
+//      } else {
+//        self.stateMessage = "Document: \(collectionName)  does not exist"
+//        print(self.stateMessage!)
+//      }
     }
   }
 

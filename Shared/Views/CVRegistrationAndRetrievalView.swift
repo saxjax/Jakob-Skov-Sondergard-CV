@@ -59,6 +59,9 @@ struct CVRegistrationAndRetrievalView: View {
         let content = CVContent(constTexts: data)
         authHandler.addDataToCV(email: username, password: pasword, cvname: cvname, data: content)
       }
+      Button("fetch"){
+        authHandler.fetchData(collectionName: self.cvname)
+      }
 
 
     }
