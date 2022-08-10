@@ -81,6 +81,18 @@ class AuthenticationHandler:ObservableObject {
 
   }
 
+  func fetchData(collectionName:String){
+    let db = Firestore.firestore()
+    db.collection(collectionName).document("cv_content").getDocument { document, error in
+      if let document = document, document.exists {
+        let dataDescription = document.data().map(String.init(describing:)) ?? "nil"
+        print("Document data: \(dataDescription)")
+      } else {
+        print("Document does not exist")
+      }
+    }
+  }
+
   func logOut(){
     do{
       try Auth.auth().signOut()
@@ -90,5 +102,9 @@ class AuthenticationHandler:ObservableObject {
       print("Error signing out: \(signOutError)")
       self.stateMessage = signOutError.localizedDescription
     }
+  }
+
+  private func createUniqueIdentifier(email:String = "", cvcode:String)->String{
+    return "\(email):\(cvcode)"
   }
 }
