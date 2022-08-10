@@ -52,7 +52,7 @@ class AuthenticationHandler:ObservableObject {
       encoder.outputFormatting = .prettyPrinted
 
       if let content = data,  let user = Auth.auth().currentUser?.email {
-        let uniqueIdentifier = "\(user):\(content.cvCode!)"
+        let uniqueIdentifier = "\(user):\(content.cvCode)"
 
         do{
           let encodedContent = try encoder.encode(data)
@@ -98,7 +98,6 @@ class AuthenticationHandler:ObservableObject {
         for document in documents!.documents {
           print("\(document.documentID) => \(document.data()["cv_content"])")
           //          let jsonData = try? JSONSerialization.data(withJSONObject: document)
-
           let result = Result{
             try document.data(as: CVContent?.self)
           }
