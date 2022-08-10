@@ -7,11 +7,11 @@
 
 import Foundation
 struct CVContent:Codable {
-  var cvCode : String
-  var name :String
-  var phone :String
-  var mail :String
-  var address : Address
+  var cvCode : String?
+  var name :String?
+  var phone :String?
+  var mail :String?
+  var address : Address?
 
 
   var resumeSubTitle :String

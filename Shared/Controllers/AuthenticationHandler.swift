@@ -7,11 +7,14 @@
 
 import Foundation
 import Firebase
+import FirebaseFirestoreSwift
+
 class AuthenticationHandler:ObservableObject {
   @Published var isLoggedIn = false
   @Published var userEmail:String? = nil
   @Published var userPassword:String? = nil
   @Published var stateMessage:String? = nil
+  @Published var theData:[String:CVContent]? = nil
 
   func registerNewCV(email:String,cvname:String){
     Auth.auth().createUser(withEmail: email, password: cvname){ (authDataResult, error) in
@@ -49,15 +52,15 @@ class AuthenticationHandler:ObservableObject {
       encoder.outputFormatting = .prettyPrinted
 
       if let content = data,  let user = Auth.auth().currentUser?.email {
-        let uniqueIdentifier = "\(user):\(content.cvCode)"
+        let uniqueIdentifier = "\(user):\(content.cvCode!)"
 
         do{
-          let encodedContent = try JSONEncoder().encode(data)
-          let json = String(data:encodedContent,encoding:String.Encoding.utf8)
+          let encodedContent = try encoder.encode(data)
+          if let json = String(data:encodedContent,encoding:String.Encoding.utf8){
 
           let db = Firestore.firestore()
           db.collection(uniqueIdentifier)
-            .addDocument(data:["cv_content": json!]){ (error) in
+            .addDocument(data:["cv_content": json]){ (error) in
               if let e = error {
                 self.stateMessage = e.localizedDescription
               }
@@ -68,6 +71,7 @@ class AuthenticationHandler:ObservableObject {
                                   """
               }
             }
+          }
         }catch {
           print("could not convert content to json in addDataToCV function")
           stateMessage = "CV could not be converted to be sent on the network. You could try again"
@@ -86,22 +90,46 @@ class AuthenticationHandler:ObservableObject {
     db.collection(collectionName).getDocuments() { documents, error in
       if let e = error {
         DispatchQueue.main.async {
-        self.stateMessage = e.localizedDescription
+          self.stateMessage = e.localizedDescription
         }
       }
       else {
+        //        let decoder = JSONDecoder()
         for document in documents!.documents {
           print("\(document.documentID) => \(document.data()["cv_content"])")
+          //          let jsonData = try? JSONSerialization.data(withJSONObject: document)
+
+          let result = Result{
+            try document.data(as: CVContent?.self)
+          }
+
+          switch result {
+            case .success(let cvContent):
+              if let cvContent = cvContent {
+                print("you did it: \(cvContent)")
+              }
+              else {
+                self.stateMessage = "Document: \(collectionName)  does not exist"
+                print(self.stateMessage!)
+              }
+              break
+
+            case .failure(let error):
+              print("error decoding city: \(error)")
+              break
+          }
+          //          let cvContent = try! decoder.decode(CVContent.self, from:
+          //          self.theData = [document.documentID : cvContent]
+
+          //      }
+          //      if let document = documents, document.exists {
+          //        let dataDescription = document.data().map(String.init(describing:)) ?? "nil"
+          //        print("Document data: \(dataDescription)")
+          //      }
         }
       }
-//      if let document = documents, document.exists {
-//        let dataDescription = document.data().map(String.init(describing:)) ?? "nil"
-//        print("Document data: \(dataDescription)")
-//      } else {
-//        self.stateMessage = "Document: \(collectionName)  does not exist"
-//        print(self.stateMessage!)
-//      }
     }
+
   }
 
   func logOut(){
