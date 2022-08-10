@@ -45,38 +45,33 @@ class AuthenticationHandler:ObservableObject {
 
   func addDataToCV(email:String,password:String,cvname:String, data:CVContent?){
     if isLoggedIn == true {
-      if let content = data, let user = Auth.auth().currentUser?.email {
-        let db = Firestore.firestore()
-        db.collection("\(user):\(content.cvCode)").addDocument(
-          data:[
-            "user" : user,
-            "cvCode" : content.cvCode,
-            "name" : content.name,
-            "phone" : content.phone,
-            "mail" : content.mail
-            //          "address" : content.address,
-            //          "resumeSubTitle" : content.resumeSubTitle,
-            //          "companyName" : content.companyName,
-            //          "positionUrl" : content.positionUrl,
-            //          "resumeText" : content.resumeText,
-            //          "competencesText" : content.competencesText,
-            //          "aboutMe" : content.aboutMe,
-            //          "ultraResume" : content.ultraResume,
-            //          "education" : content.education,
-            //          "experience" : content.experience,
-            //          "studyRelatedExperience" : content.studyRelatedExperience,
-            //          "publications"  : content.publications,
-            //          "languages" : content.languages,
-            //          "frameworks" : content.frameworks,
-            //          "capabilities" : content.capabilities
-          ]){ (error) in
-            if let e = error {
-              self.stateMessage = e.localizedDescription
+      let encoder = JSONEncoder()
+      encoder.outputFormatting = .prettyPrinted
+
+      if let content = data,  let user = Auth.auth().currentUser?.email {
+        let uniqueIdentifier = "\(user):\(content.cvCode)"
+
+        do{
+          let encodedContent = try JSONEncoder().encode(data)
+          let json = String(data:encodedContent,encoding:String.Encoding.utf8)
+
+          let db = Firestore.firestore()
+          db.collection(uniqueIdentifier)
+            .addDocument(data:["cv_content": json!]){ (error) in
+              if let e = error {
+                self.stateMessage = e.localizedDescription
+              }
+              else {
+                self.stateMessage = """
+                                  Successfully saved CV with identifier:
+                                  \(uniqueIdentifier)
+                                  """
+              }
             }
-            else {
-              self.stateMessage = "Successfully saved CV"
-            }
-          }
+        }catch {
+          print("could not convert content to json in addDataToCV function")
+          stateMessage = "CV could not be converted to be sent on the network. You could try again"
+        }
       }
     } else {
       stateMessage = "You must login before submitting a CV"
