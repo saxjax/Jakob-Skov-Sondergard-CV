@@ -71,11 +71,12 @@ class AuthenticationHandler:ObservableObject {
         do{
           let db = Firestore.firestore()
           try db.collection(uniqueIdentifier).document(cvname).setData(from: content)
+          storedData = content
           setStateMessageFromString(string:  """
                                   Successfully saved CV with identifier:
                                   \(uniqueIdentifier)
                                   """)
-          
+
         }catch {
           self.setStateMessageFromError(error: error)
         }

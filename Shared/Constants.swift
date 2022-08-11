@@ -14,7 +14,12 @@ struct Constants {
         static let name = "TextColorName"
         static let contact = "TextColorHeading"
         static let appBackground = "AppBackground"
+        static let textFieldHighlighted = "ColorTextFieldHighlighted"
     }
+  struct ButtonColors {
+    static let selected = "ButtonSelected"
+    static let unselected = "ButtonUnselected"
+  }
     struct FontType {
         static let heading = "Cochin-Bold"
         static let subHeading = "Optima-Bold"
