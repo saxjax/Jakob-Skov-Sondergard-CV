@@ -110,7 +110,7 @@ struct CVRegistrationAndRetrievalView: View {
 
             HStack {
               Button("fetch"){
-                authHandler.fetchData(collectionName: self.uniqueId)
+                authHandler.fetchData(uniqueIdentifier: self.uniqueId)
               }
               Button("Scan QR"){}.disabled(true)
             }

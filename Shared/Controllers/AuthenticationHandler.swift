@@ -16,7 +16,7 @@ class AuthenticationHandler:ObservableObject {
   @Published var stateMessage:String? = nil
   @Published var storedData:CVContent? = nil
 
-//  MARK: -User handling
+  //  MARK: -User handling
 
   func registerNewUser(email:String,password:String){
     Auth.auth().createUser(withEmail: email, password: password){ (authDataResult, error) in
@@ -60,7 +60,7 @@ class AuthenticationHandler:ObservableObject {
     }
   }
 
-//  MARK: -Document handling
+  //  MARK: -Document handling
 
   func storeDataToDataStore(email:String?=nil, password:String?=nil, cvname:String, data:CVContent?){
     if isLoggedIn == true {
@@ -89,55 +89,31 @@ class AuthenticationHandler:ObservableObject {
 
   }
 
-  func fetchData(collectionName:String){
+  func fetchData(uniqueIdentifier:String){
     let db = Firestore.firestore()
-    db.collection(collectionName).getDocuments() { documents, error in
-      if let e = error {
-        DispatchQueue.main.async {
-          self.stateMessage = e.localizedDescription
-        }
-      }
-      else {
-        //        let decoder = JSONDecoder()
-        for document in documents!.documents {
-          print("\(document.documentID) => \(String(describing: document.data()["cv_content"]))")
-          //          let jsonData = try? JSONSerialization.data(withJSONObject: document)
-          let result = Result{
-            try document.data(as: CVContent?.self)
-          }
-
-          switch result {
-            case .success(let cvContent):
-              if let cvContent = cvContent {
-                print("you did it: \(cvContent)")
-              }
-              else {
-                self.setStateMessageFromString(string: "Document: \(collectionName)  does not exist")
-              }
-              break
-
-            case .failure(let error):
-              print("error decoding city: \(error)")
-              break
-          }
-          //          let cvContent = try! decoder.decode(CVContent.self, from:
-          //          self.theData = [document.documentID : cvContent]
-
-          //      }
-          //      if let document = documents, document.exists {
-          //        let dataDescription = document.data().map(String.init(describing:)) ?? "nil"
-          //        print("Document data: \(dataDescription)")
-          //      }
-        }
+    let collectionName = uniqueIdentifier
+    let documentName = String(uniqueIdentifier.split(separator: ":")[1])
+    db.collection(collectionName).document(documentName).getDocument(as: CVContent.self){(result) in
+      switch result {
+        case .success(let cvContent):
+          self.setStorredData(content: cvContent)
+          self.setStateMessageFromString(string: "you did it: \(cvContent)")
+        case .failure(let error):
+          self.setStateMessageFromError(error: error)
       }
     }
-
   }
-
 
 
   private func createUniqueIdentifier(email:String = "", cvcode:String)->String{
     return "\(email):\(cvcode)"
+  }
+
+  private func setStorredData(content:CVContent){
+    DispatchQueue.main.async {
+      self.storedData = content
+      print(self.stateMessage!)
+    }
   }
 
   private func setStateMessageFromError(error:Error){
