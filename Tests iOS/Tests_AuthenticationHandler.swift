@@ -25,7 +25,7 @@ class Tests_AuthenticationHandler: XCTestCase {
 
     }
     //when
-    let sut = AuthenticationHandler()
+    _ = AuthenticationHandler()
     //then
     
     // This is an example of a functional test case.
@@ -41,7 +41,7 @@ class Tests_AuthenticationHandler: XCTestCase {
     let email="unknown@unknown.unknown"
     let password = "nilnil"
     //when
-    sut.loginToExistingCV(email: email, cvname: password)
+    sut.loginWith(email:email, password:password)
     //then
     XCTAssertFalse(sut.isLoggedIn)
   }
@@ -53,7 +53,7 @@ class Tests_AuthenticationHandler: XCTestCase {
     let email="unknown@unknown"
     let password = "nilnil"
     //when
-    sut.loginToExistingCV(email: email, cvname: password)
+    sut.loginWith(email:email, password:password)
     //then
     XCTAssertFalse(sut.isLoggedIn)
     XCTAssertNotEqual(nil, sut.stateMessage, "message is set to something")
@@ -68,7 +68,7 @@ class Tests_AuthenticationHandler: XCTestCase {
     let email="unknown@unknown.unknown"
     let password = "nilni"
     //when
-    sut.loginToExistingCV(email: email, cvname: password)
+    sut.loginWith(email:email, password:password)
     //then
     XCTAssertFalse(sut.isLoggedIn)
     XCTAssertNotNil(sut.stateMessage?.contains("password"))
@@ -81,10 +81,10 @@ class Tests_AuthenticationHandler: XCTestCase {
     let email="1@2.dk"
     let password = "123456"
     //when
-    sut.loginToExistingCV(email: email, cvname: password)
+    sut.loginWith(email:email, password:password)
     //then
     XCTAssertTrue(sut.isLoggedIn)
-    XCTAssertEqual(sut.stateMessage, "Signed In")
+    XCTAssertNotNil(sut.stateMessage?.contains("Signed In"))
   }
   
   func testPerformanceExample() throws {

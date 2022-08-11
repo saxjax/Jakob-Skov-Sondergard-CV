@@ -17,7 +17,7 @@ struct ContentView: View {
       NavigationView{
         VStack{
           CVRegistrationAndRetrievalView(username: $enteredEmail,
-                                         pasword: $enteredCode,
+                                         password: $enteredCode,
                                          cvname: $cvDataObserved.cvCode,
                                          authHandler: AuthenticationHandler(), data: cvDataObserved)
           Divider()

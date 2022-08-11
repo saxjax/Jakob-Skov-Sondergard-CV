@@ -14,67 +14,70 @@ class AuthenticationHandler:ObservableObject {
   @Published var userEmail:String? = nil
   @Published var userPassword:String? = nil
   @Published var stateMessage:String? = nil
-  @Published var theData:[String:CVContent]? = nil
+  @Published var storedData:CVContent? = nil
 
-  func registerNewCV(email:String,cvname:String){
-    Auth.auth().createUser(withEmail: email, password: cvname){ (authDataResult, error) in
+//  MARK: -User handling
+
+  func registerNewUser(email:String,password:String){
+    Auth.auth().createUser(withEmail: email, password: password){ (authDataResult, error) in
       if let e = error {
-        self.stateMessage = e.localizedDescription
+        self.setStateMessageFromError(error:e)
       }
       else {
         print(authDataResult!)
-        print("succeeded in creating CV: \(email):\(cvname)")
+        print("succeeded in creating new user:\(email) with password:\(password)")
         self.isLoggedIn = true
-        self.stateMessage = "Signed In"
+        self.userEmail = email
+        self.setStateMessageFromString(string: "Signed In as \(email)")
       }
     }
   }
   
-  func loginToExistingCV(email:String,cvname:String){
-    Auth.auth().signIn(withEmail: email, password: cvname){(authResult,error) in
+  func loginWith(email:String,password:String){
+    Auth.auth().signIn(withEmail: email, password: password){(authDataResult,error) in
       if let e = error {
-        self.stateMessage = e.localizedDescription
+        self.setStateMessageFromError(error: e)
       }
       else {
-        print(authResult!)
-        print("succeeded in finding user-email: \(email):\(cvname)")
+        print(authDataResult!)
+        print("Successful login wit user-email: \(email):\(password)")
+        print("Credential:\(String(describing: authDataResult!.credential))")
         self.isLoggedIn = true
-        self.stateMessage = "Signed In"
+        self.userEmail = email
+        self.setStateMessageFromString(string:"Signed In as:\(email)")
       }
-
     }
-
   }
 
-  func addDataToCV(email:String,password:String,cvname:String, data:CVContent?){
+  func logOut(){
+    do{
+      try Auth.auth().signOut()
+      self.isLoggedIn = false
+      self.stateMessage = "Signed Out"
+    }catch {
+      print("Error signing out: \(error)")
+      self.setStateMessageFromError(error: error)
+    }
+  }
+
+//  MARK: -Document handling
+
+  func storeDataToDataStore(email:String?=nil, password:String?=nil, cvname:String, data:CVContent?){
     if isLoggedIn == true {
-      let encoder = JSONEncoder()
-      encoder.outputFormatting = .prettyPrinted
 
       if let content = data,  let user = Auth.auth().currentUser?.email {
-        let uniqueIdentifier = "\(user):\(content.cvCode)"
+        let uniqueIdentifier = "\(user):\(cvname)"
 
         do{
-          let encodedContent = try encoder.encode(data)
-          if let json = String(data:encodedContent,encoding:String.Encoding.utf8){
-
           let db = Firestore.firestore()
-          db.collection(uniqueIdentifier)
-            .addDocument(data:["cv_content": json]){ (error) in
-              if let e = error {
-                self.stateMessage = e.localizedDescription
-              }
-              else {
-                self.stateMessage = """
+          try db.collection(uniqueIdentifier).document(cvname).setData(from: content)
+          setStateMessageFromString(string:  """
                                   Successfully saved CV with identifier:
                                   \(uniqueIdentifier)
-                                  """
-              }
-            }
-          }
+                                  """)
+          
         }catch {
-          print("could not convert content to json in addDataToCV function")
-          stateMessage = "CV could not be converted to be sent on the network. You could try again"
+          self.setStateMessageFromError(error: error)
         }
       }
     } else {
@@ -96,7 +99,7 @@ class AuthenticationHandler:ObservableObject {
       else {
         //        let decoder = JSONDecoder()
         for document in documents!.documents {
-          print("\(document.documentID) => \(document.data()["cv_content"])")
+          print("\(document.documentID) => \(String(describing: document.data()["cv_content"]))")
           //          let jsonData = try? JSONSerialization.data(withJSONObject: document)
           let result = Result{
             try document.data(as: CVContent?.self)
@@ -108,8 +111,7 @@ class AuthenticationHandler:ObservableObject {
                 print("you did it: \(cvContent)")
               }
               else {
-                self.stateMessage = "Document: \(collectionName)  does not exist"
-                print(self.stateMessage!)
+                self.setStateMessageFromString(string: "Document: \(collectionName)  does not exist")
               }
               break
 
@@ -131,18 +133,23 @@ class AuthenticationHandler:ObservableObject {
 
   }
 
-  func logOut(){
-    do{
-      try Auth.auth().signOut()
-      self.isLoggedIn = false
-      self.stateMessage = "Signed Out"
-    }catch let signOutError as Error{
-      print("Error signing out: \(signOutError)")
-      self.stateMessage = signOutError.localizedDescription
-    }
-  }
+
 
   private func createUniqueIdentifier(email:String = "", cvcode:String)->String{
     return "\(email):\(cvcode)"
+  }
+
+  private func setStateMessageFromError(error:Error){
+    DispatchQueue.main.async {
+      self.stateMessage = error.localizedDescription
+      print(self.stateMessage!)
+    }
+  }
+
+  private func setStateMessageFromString(string:String){
+    DispatchQueue.main.async {
+      self.stateMessage = string
+      print(self.stateMessage!)
+    }
   }
 }

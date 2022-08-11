@@ -10,7 +10,7 @@ import SwiftUI
 
 struct CVRegistrationAndRetrievalView: View {
   @Binding var username:String
-  @Binding var pasword:String
+  @Binding var password:String
   @Binding var cvname:String
   @StateObject var authHandler: AuthenticationHandler
   @ObservedObject var data: ConstTextsObserved
@@ -19,29 +19,29 @@ struct CVRegistrationAndRetrievalView: View {
     VStack {
       Text("Email and CV ")
       TextField("user email",text: $username)
-      TextField("unique 6 cipher CV name", text: $cvname)
+      TextField("password", text: $password)
       authHandler.stateMessage != nil ? Text("Status:\(authHandler.stateMessage! )"):nil
       HStack {
 //#if os(macOS)
         Button("Register"){
 
-          if username.isEmpty || cvname.isEmpty {
+          if username.isEmpty || password.isEmpty {
             print("you must fill in some values into both username and password")
           }
           else {
-            authHandler.registerNewCV(email: self.username, cvname: self.cvname)
+            authHandler.registerNewUser(email: self.username, password: self.password)
           }
-        }
+        }.disabled((username.isEmpty || password.isEmpty))
 //#endif
         Button("Login"){
           print(username,cvname)
-          if username.isEmpty || cvname.isEmpty {
+          if username.isEmpty || password.isEmpty {
             print("you must fill in some values into both username and password")
           }
           else {
-            authHandler.loginToExistingCV(email: self.username, cvname: self.cvname)
+            authHandler.loginWith(email: self.username, password: self.password)
           }
-        }
+        }.disabled((username.isEmpty || password.isEmpty))
 
         authHandler.isLoggedIn ? Button("LogOut"){
           authHandler.logOut()
@@ -51,13 +51,21 @@ struct CVRegistrationAndRetrievalView: View {
 
       TextField("Enter CV code", text: $cvname)
         .background(Color(Constants.TextColors.heading)).onSubmit {
-//        cvDataObserved.companyName = cvDataObserved.cvCode
-
-
+        data.companyName = data.cvCode
       }
+
+
+      authHandler.storedData != nil ?
+      HStack {
+        Text("unique identifier code:")
+        Text("\(username):\(cvname)")
+      }
+        : nil
+
+
       Button("submit"){
         let content = CVContent(constTexts: data)
-        authHandler.addDataToCV(email: username, password: pasword, cvname: cvname, data: content)
+        authHandler.storeDataToDataStore(email: username, password: password, cvname: cvname, data: content)
       }
       Button("fetch"){
         authHandler.fetchData(collectionName: self.cvname)
@@ -73,7 +81,7 @@ struct CVRegistrationAndRetrievalView: View {
 struct CVRegistrationAndRetrievalView_Previews: PreviewProvider {
   static let ah = AuthenticationHandler()
   static var previews: some View {
-    CVRegistrationAndRetrievalView(username: .constant("me@me.com"), pasword: .constant("CV Identifier"),cvname: .constant("mycvname"), authHandler: ah, data: ConstTextsObserved())
+    CVRegistrationAndRetrievalView(username: .constant("me@me.com"), password: .constant("CV Identifier"),cvname: .constant("myCvName"), authHandler: ah, data: ConstTextsObserved())
   }
 }
 
