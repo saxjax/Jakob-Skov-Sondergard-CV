@@ -374,5 +374,26 @@ This little app that you are looking at is developed in swiftUI.
 """)
   ]
 
+  required init(from decoder: Decoder) throws {
+    let container = try decoder.container(keyedBy: CodingKeys.self)
+
+    cvCode = try container.decode(String.self, forKey: .cvCode)
+  }
+
+   init(){}
+}
+
+extension ConstTextsObserved:Codable {
+  enum CodingKeys: CodingKey{
+    case  cvCode,name,phone,mail,address ,resumeSubTitle ,companyName ,positionUrl ,resumeText ,competencesText ,aboutMe ,ultraResume ,education ,experience,studyRelatedExperience,publications,languages ,frameworks ,capabilities
+  }
+
+  func encode(to encoder: Encoder) throws {
+    var container = encoder.container(keyedBy: CodingKeys.self)
+
+    try container.encode(cvCode, forKey: .cvCode)
+  }
+
+
 
 }
