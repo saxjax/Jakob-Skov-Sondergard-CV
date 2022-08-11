@@ -12,14 +12,15 @@ struct ContentView: View {
   @State var enteredCode = "123456"
   @State var CVdata = ConstTexts()
   @StateObject var cvDataObserved = ConstTextsObserved()
-
+  
     var body: some View {
       NavigationView{
         VStack{
-          CVRegistrationAndRetrievalView(username: $enteredEmail, cvname: $enteredCode, authHandler: AuthenticationHandler())
-          TextField("Enter CV code", text: $cvDataObserved.cvCode).background(Color(Constants.TextColors.heading)).onSubmit {
-            cvDataObserved.companyName = cvDataObserved.cvCode
-          }
+          CVRegistrationAndRetrievalView(username: $enteredEmail,
+                                         password: $enteredCode,
+                                         cvname: $cvDataObserved.cvCode,
+                                         authHandler: AuthenticationHandler(), data: cvDataObserved)
+          Divider()
           NavigationLink(destination: RoundedBruttoCVView()){
             Text("Complete CV")
           }.navigationTitle("select CV").padding(.vertical)
