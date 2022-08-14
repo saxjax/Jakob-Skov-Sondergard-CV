@@ -8,19 +8,22 @@
 import SwiftUI
 
 struct ContactInfoView: View {
+  @Binding var telephone:String
+  @Binding var mail:String
     var body: some View {
         VStack {
             Text("Software Engineer")
                 .font(.custom(Constants.FontType.subHeading, size: 24, relativeTo: .title))
                 .foregroundColor(Color(Constants.TextColors.subHeading))
-            SimpleInfoView(text: "+45  53 37 95 59", imageName: "phone.fill")
-            SimpleInfoView(text: "saxjax@saxjax.dk", imageName: "envelope.fill")
+            SimpleInfoView(text: telephone, imageName: "phone.fill")
+            SimpleInfoView(text: mail, imageName: "envelope.fill")
         }
     }
 }
 
 struct ContactInfoView_Previews: PreviewProvider {
+
     static var previews: some View {
-        ContactInfoView()
+      ContactInfoView(telephone: .constant("12345678"), mail: .constant("1@2.dk"))
     }
 }

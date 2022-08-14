@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct SimpleInfoView: View {
-    let text:String
+    @State var text:String
     let imageName:String?
 
     var body: some View {
@@ -56,7 +56,7 @@ Software Engineer | Private projects. 2018-Present
 5
 """
     static var previews: some View {
-        SimpleInfoView(text: text2 ,imageName: "phone.fill").previewLayout(.sizeThatFits)
-        SimpleInfoView(text: text2 ,imageName: "phone.fill").previewLayout(.sizeThatFits).preferredColorScheme(.dark)
+      SimpleInfoView(text: text2 ,imageName: "phone.fill").previewLayout(.sizeThatFits)
+      SimpleInfoView(text: text2 ,imageName: "phone.fill").previewLayout(.sizeThatFits).preferredColorScheme(.dark)
     }
 }
