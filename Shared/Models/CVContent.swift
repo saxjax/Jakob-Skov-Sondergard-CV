@@ -20,13 +20,13 @@ import Foundation
    @Published var competencesText :String
    @Published var aboutMe : [CVItem]
    @Published var ultraResume : [CVItem]
-   @Published var education : [CVItem]
-   @Published var experience:[CVItem]
-   @Published var studyRelatedExperience:[CVItem]
-   @Published var publications:[CVItem]
-   @Published var languages : [CVItem]
-   @Published var frameworks :[CVItem]
-   @Published var capabilities:[CVItem]
+   @Published var education : [CVItem]?
+   @Published var experience:[CVItem]?
+   @Published var studyRelatedExperience:[CVItem]?
+   @Published var publications:[CVItem]?
+   @Published var languages : [CVItem]?
+   @Published var frameworks :[CVItem]?
+   @Published var capabilities:[CVItem]?
 
 
    init(){

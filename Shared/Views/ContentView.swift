@@ -72,7 +72,7 @@ struct RoundedBruttoCVView: View {
 
           ContactInfoView(telephone: $content.phone, mail: $content.mail)
           Divider()
-          showAboutMe ? nil : JobSectionView()
+          showAboutMe ? nil : JobSectionView(education: $content.education, experience: $content.experience, studyRelatedExperience: $content.studyRelatedExperience, publications: $content.publications, languages: $content.languages, frameworks: $content.frameworks)
         } //VStack
 
       }

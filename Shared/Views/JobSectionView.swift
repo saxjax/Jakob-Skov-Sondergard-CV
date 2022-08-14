@@ -8,12 +8,12 @@
 import SwiftUI
 
 struct JobSectionView: View {
-  @State var education:[CVItem]?
-  @State var experience:[CVItem]?
-  @State var studyRelatedExperience:[CVItem]?
-  @State var publications:[CVItem]?
-  @State var languages:[CVItem]?
-  @State var frameworks:[CVItem]?
+  @Binding var education:[CVItem]?
+  @Binding var experience:[CVItem]?
+  @Binding var studyRelatedExperience:[CVItem]?
+  @Binding var publications:[CVItem]?
+  @Binding var languages:[CVItem]?
+  @Binding var frameworks:[CVItem]?
 
 
     var body: some View {
@@ -32,6 +32,11 @@ struct JobSectionView: View {
 struct JobSectionView_Previews: PreviewProvider {
   static let content = CVContentInitialValues()
     static var previews: some View {
-      JobSectionView(education: content.education, experience: content.experience, studyRelatedExperience: content.studyRelatedExperience, publications: content.publications, languages: content.languages, frameworks: content.frameworks)
+      JobSectionView(education: .constant(content.education),
+                     experience: .constant(content.experience),
+                     studyRelatedExperience: .constant(content.studyRelatedExperience),
+                     publications: .constant(content.publications),
+                     languages: .constant(content.languages),
+                     frameworks: .constant(content.frameworks))
     }
 }
