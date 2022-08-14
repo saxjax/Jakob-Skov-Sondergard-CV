@@ -20,7 +20,11 @@ class AuthenticationHandler:ObservableObject,SaxjaxAuthManager,SaxjaxDataManager
   @Published var stateMessage:String? = nil
   @Published var storedData:CVContent? = nil
 
+  init(){}
 
+  init(observedContent:CVContent){
+    storedData = observedContent
+  }
   //  MARK: -User handling
 
   func registerNewUser(username:String,password:String){

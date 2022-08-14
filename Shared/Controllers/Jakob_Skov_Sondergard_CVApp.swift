@@ -28,12 +28,12 @@ struct Jakob_Skov_Sondergard_CVApp: App {
     
   }
 
-  @StateObject var authHandler:AuthenticationHandler = AuthenticationHandler()
-  @StateObject var cvContent:CVContent = CVContent(constTexts: ConstTexts())
+  @StateObject var authHandler:AuthenticationHandler = AuthenticationHandler(observedContent: CVContent(constTexts: ConstTexts()))
+//  @StateObject var cvContent:CVContent = CVContent(constTexts: ConstTexts())
 
     var body: some Scene {
         WindowGroup {
-            ContentView(authHandler: authHandler, cvDataObserved: cvContent)
+          ContentView(authHandler: authHandler, cvDataObserved: authHandler.storedData!)
         }
     }
   }

@@ -22,11 +22,11 @@ struct ProsaCVContentView: View {
     let resumeTitle = "Resume"
     let resumeSubTitle = content.resumeSubTitle
     let positionUrl = content.positionUrl
-    let resume = content.resumeText
+//    var resume = content.resumeText
 
     //MARK: - info competences
     let competencesTitle = "Competences"
-    let competences = content.competencesText
+//    let competences = content.competencesText
 
     VStack {
       TextField("Enter Company Name", text: $content.companyName)
@@ -43,10 +43,10 @@ struct ProsaCVContentView: View {
 
       ScrollView {
 //MARK: -Resume
-        ProsaCVItemContainerView(CVItemContainerTitle: resumeTitle, CVItemContainerSubTitle: resumeSubTitle, containerUrl: positionUrl, bodyContent: resume)
+        ProsaCVItemContainerView(CVItemContainerTitle: resumeTitle, CVItemContainerSubTitle: resumeSubTitle, containerUrl: positionUrl, bodyContent: $content.resumeText)
         Divider()
 //MARK: -Competences
-        ProsaCVItemContainerView(CVItemContainerTitle: competencesTitle, bodyContent: competences)
+        ProsaCVItemContainerView(CVItemContainerTitle: competencesTitle, bodyContent: $content.competencesText)
       }
 
       //Competences, Experience, Education cronological newest first

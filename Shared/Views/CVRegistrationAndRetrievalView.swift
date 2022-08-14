@@ -12,7 +12,7 @@ struct CVRegistrationAndRetrievalView: View {
   @Binding var username:String
   @Binding var password:String
   @Binding var cvname:String
-  @StateObject var authHandler: AuthenticationHandler
+  @ObservedObject var authHandler: AuthenticationHandler
   @ObservedObject var data: CVContent
   @State var manage = true
   @State var uniqueId = ""
