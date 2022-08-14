@@ -7,27 +7,26 @@
 
 import Foundation
 class ConstTexts:ObservableObject{
-  static let name = "Jakob Skov Søndergård"
-  static let phone = "+45 53379559"
-  static let mail = "jakob@saxjax.dk"
-  struct address {
-    static let street = "Rolighedsvej 5"
-    static let postnumber = "9510"
-    static let city = "Arden"
-    static let country = "Denmark"
-  }
-  static let resumeSubTitle = """
+  let cvCode:String = "123456"
+  let imageName:String = "Jakob_sky"
+   let name = "Jakob Skov Søndergård"
+   let phone = "+45 53379559"
+   let mail = "jakob@saxjax.dk"
+
+  let address  = Address(street: "Rolighedsvej 5", postnumber: "9510", city: "Arden", country: "Denmark")
+
+   let resumeSubTitle = """
                               Hi Track Unit
                               This CV is aimed at the position as iOS developer at Track Unit:
                               """
-  static let companyName = "Track Unit"
-  static let positionUrl = "http://saxjax.dk"
-  static let resumeText = """
+   let companyName = "Track Unit"
+   let positionUrl = "http://saxjax.dk"
+   let resumeText = """
                         Beskriv personlige egenskaber,så de modsvarer stillingens kravspecifikationer.
                         Egenskaber Fordele Udbytte
                         Dit kendskab til og erfaring med teknologier / metoder, så de modsvarer stillingen
                         """
-  static let competencesText = """
+   let competencesText = """
                           Hvad er virksomhedens behov?
                           hvilke af dine personlige egenskaber dækker bedst
                           hvilke an mine faglige kompetencer er de vigtigste.
@@ -45,7 +44,7 @@ class ConstTexts:ObservableObject{
 
                           Resultat: Blev det en success, så beskriv hvad der lykkedes - ellers beskriv hvad du lærte
                           """
-  static let aboutMe = [
+   let aboutMe = [
     CVItem(id: 1, title: "Me and Programming", body: """
     My big programming passion lays in apples ecosystem of devices and the Swift programming language.
     I appreciate the process of building tools that help people solving tasks of any kind, and this passion is what drove me towards a carrier change from performing arts into building "stuff".
@@ -59,7 +58,7 @@ class ConstTexts:ObservableObject{
     """)
 
   ]
-  static let ultraResume = [
+   let ultraResume = [
     CVItem(id: 16, title: """
 2021-Present
 Freelance Product owner and Software engineer on product NOTIO at NOVIA
@@ -163,7 +162,7 @@ Born in Århus
 """,
            body: nil)
   ]
-  static let education = [
+   let education = [
     CVItem(id: 0,
            title: "June 2022 Aalborg",
            body: """
@@ -188,7 +187,7 @@ Master of Music
 """
           )
   ]
-  static let experience:[CVItem] = [
+   let experience:[CVItem] = [
     CVItem(id:0,
            title:"""
 Software Engineer | Novia, Jakobsstad Finland.
@@ -216,7 +215,7 @@ Designed, developed and shipped a simple math learning IOS application (saxjax D
 This little app that you are looking at is developed in swiftUI.
 """)
   ]
-  static let studyRelatedExperience:[CVItem] = [
+   let studyRelatedExperience:[CVItem] = [
     CVItem(id:0,
            title:"""
                 Student Software Engineer | Turf Tank, Hjoerring.
@@ -244,7 +243,7 @@ This little app that you are looking at is developed in swiftUI.
                   """
           )
   ]
-  static let publications:[CVItem] = [
+   let publications:[CVItem] = [
     CVItem(id:0,
            title:"""
                 Bachelor’s Project - AI-driven smart washing machines,
@@ -337,7 +336,7 @@ This little app that you are looking at is developed in swiftUI.
                 OBS: report is in Danish.
                 """)
   ]
-  static let languages = [
+   let languages = [
     CVItem(id: 0, title: "", body: "Swift"),
     CVItem(id: 1, title: "", body: "SwiftUI"),
     CVItem(id: 2, title: "", body: "Dart and Flutter"),
@@ -349,7 +348,7 @@ This little app that you are looking at is developed in swiftUI.
 
 
   ]
-  static let frameworks = [
+   let frameworks = [
     CVItem(id: 0, title: "Xcode", body: "including Interface builder, auto layout, SwiftUI with previews, Playground,  debugging, CreateML, Extensions and protocols, delegates, pods, swift package manager, Publishing to the app store and more."),
     CVItem(id: 1, title: "React.js", body: "including portals, callbacks, jest, node, sass, BEM-naming."),
     CVItem(id: 2, title: "Flutter framework", body: " "),
@@ -361,7 +360,7 @@ This little app that you are looking at is developed in swiftUI.
     CVItem(id: 8, title: "Visual Studio", body: ""),
     CVItem(id: 9, title: "Visual Studio Code", body: "This is my preferred IDE for JavaScript and Python"),
   ]
-  static let capabilities:[CVItem] = [
+   let capabilities:[CVItem] = [
     CVItem(id:0,title:"Project Management",
            body:"""
     Trello

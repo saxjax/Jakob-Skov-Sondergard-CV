@@ -11,7 +11,8 @@ struct ContentView: View {
   @State var enteredEmail = "1@2.dk"
   @State var enteredCode = "123456"
   @State var CVdata = ConstTexts()
-  @StateObject var cvDataObserved = ConstTextsObserved()
+  @ObservedObject var authHandler:AuthenticationHandler
+  @ObservedObject var cvDataObserved:CVContent //= CVContentInitialValues() //ConstTextsObserved()
   
     var body: some View {
       NavigationView{
@@ -19,9 +20,9 @@ struct ContentView: View {
           CVRegistrationAndRetrievalView(username: $enteredEmail,
                                          password: $enteredCode,
                                          cvname: $cvDataObserved.cvCode,
-                                         authHandler: AuthenticationHandler(), data: cvDataObserved)
+                                         authHandler: authHandler, data: cvDataObserved)
           Divider()
-          NavigationLink(destination: RoundedBruttoCVView()){
+          NavigationLink(destination: RoundedBruttoCVView(content: cvDataObserved)){
             Text("Complete CV")
           }.navigationTitle("select CV").padding(.vertical)
 
@@ -37,20 +38,24 @@ struct ContentView: View {
 
 
 struct ContentView_Previews: PreviewProvider {
-    static var previews: some View {
-        ContentView()
+  static let auth = AuthenticationHandler()
+  static let data = CVContentInitialValues()
+
+  static var previews: some View {
+        ContentView(authHandler: auth, cvDataObserved: data)
             .previewInterfaceOrientation(.portrait)
-        ContentView()
+        ContentView(authHandler: auth, cvDataObserved: data)
             .previewInterfaceOrientation(.portrait).preferredColorScheme(.dark)
     }
 }
 
 
 
-
+//TODO: movo out into separate file
 struct RoundedBruttoCVView: View {
   @State private var showAboutMe = false
   @State private var rotationAmount = 0.0
+  @ObservedObject var content:CVContent
 
   var body: some View {
     ZStack {
@@ -59,11 +64,11 @@ struct RoundedBruttoCVView: View {
       ScrollView{
 
         VStack {
-          TopPresentationView(rotationAmount: $rotationAmount)
+          TopPresentationView(rotationAmount: $rotationAmount,imageName: $content.imageName, name:$content.name)
 
           AboutMeButton(showAboutMe: $showAboutMe, rotation: $rotationAmount).rotation3DEffect(.degrees(rotationAmount), axis: (x:1,y:0,z:0))
 
-          showAboutMe ? AboutMeSectionView(showAboutMe: $showAboutMe, rotationAmount: $rotationAmount) : nil
+          showAboutMe ? AboutMeSectionView(showAboutMe: $showAboutMe, rotationAmount: $rotationAmount,aboutMe: $content.aboutMe, ultraResume: $content.ultraResume) : nil
 
           ContactInfoView()
           Divider()

@@ -7,7 +7,7 @@
 
 import Foundation
 class ConstTextsObserved:ObservableObject{
-  @Published var cvCode = "123456"
+  @Published var cvCode:String? = "123456"
   @Published var name = "Jakob Skov Søndergård"
   @Published var phone = "+45 53379559"
   @Published var mail = "jakob@saxjax.dk"
@@ -374,13 +374,15 @@ This little app that you are looking at is developed in swiftUI.
 """)
   ]
 
+init(){}
+//  MARK: - Codable Conformance (not in extension because of the initializer)
   required init(from decoder: Decoder) throws {
     let container = try decoder.container(keyedBy: CodingKeys.self)
 
     cvCode = try container.decode(String.self, forKey: .cvCode)
   }
 
-   init(){}
+
 }
 
 extension ConstTextsObserved:Codable {

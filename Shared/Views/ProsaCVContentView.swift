@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct ProsaCVContentView: View {
-  @ObservedObject var content: ConstTextsObserved
+  @ObservedObject var content: CVContent
 
   var body: some View {
     //MARK: - info contact
@@ -56,7 +56,7 @@ struct ProsaCVContentView: View {
 
 struct ProsaCVContentView_Previews: PreviewProvider {
   static var previews: some View {
-    ProsaCVContentView(content: ConstTextsObserved())
+    ProsaCVContentView(content: CVContentInitialValues())
   }
 }
 

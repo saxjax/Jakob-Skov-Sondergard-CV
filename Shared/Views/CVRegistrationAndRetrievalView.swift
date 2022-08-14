@@ -13,7 +13,7 @@ struct CVRegistrationAndRetrievalView: View {
   @Binding var password:String
   @Binding var cvname:String
   @StateObject var authHandler: AuthenticationHandler
-  @ObservedObject var data: ConstTextsObserved
+  @ObservedObject var data: CVContent
   @State var manage = true
   @State var uniqueId = ""
 
@@ -60,7 +60,7 @@ struct CVRegistrationAndRetrievalView: View {
                 print("you must fill in some values into both username and password")
               }
               else {
-                authHandler.registerNewUser(email: self.username, password: self.password)
+                authHandler.registerNewUser(username: self.username, password: self.password)
               }
             }.disabled((username.isEmpty || password.isEmpty))
             Divider()
@@ -70,7 +70,7 @@ struct CVRegistrationAndRetrievalView: View {
                 print("you must fill in some values into both username and password")
               }
               else {
-                authHandler.loginWith(email: self.username, password: self.password)
+                authHandler.loginWith(username: self.username, password: self.password)
               }
             }.disabled((username.isEmpty || password.isEmpty))
             Divider()
@@ -87,13 +87,12 @@ struct CVRegistrationAndRetrievalView: View {
               Text("CV name")
               TextField("Enter CV code", text: $cvname)
                 .background(Color(Constants.TextColors.textFieldHighlighted)).onSubmit {
-                  data.companyName = data.cvCode
-
+                  // TODO: I should do something here
                 }
             }
             Button("submit"){
-              let content = CVContent(constTexts: data)
-              authHandler.storeDataToDataStore(email: username, password: password, cvname: cvname, data: content)
+              let content = data
+              authHandler.storeDataToDataStore(email: username, password: password, dataIdentifier: cvname, data: content)
               self.uniqueId = "\(username):\(cvname)"
 
             }
@@ -130,7 +129,7 @@ struct CVRegistrationAndRetrievalView: View {
 struct CVRegistrationAndRetrievalView_Previews: PreviewProvider {
   static let ah = AuthenticationHandler()
   static var previews: some View {
-    CVRegistrationAndRetrievalView(username: .constant("me@me.com"), password: .constant("my password"),cvname: .constant("myCvName"), authHandler: ah, data: ConstTextsObserved())
+    CVRegistrationAndRetrievalView(username: .constant("me@me.com"), password: .constant("my password"),cvname: .constant("myCvName"), authHandler: ah, data: CVContentInitialValues())
   }
 }
 

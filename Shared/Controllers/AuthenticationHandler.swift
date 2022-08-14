@@ -9,42 +9,47 @@ import Foundation
 import Firebase
 import FirebaseFirestoreSwift
 
-class AuthenticationHandler:ObservableObject {
+
+
+class AuthenticationHandler:ObservableObject,SaxjaxAuthManager,SaxjaxDataManager {
+
+
   @Published var isLoggedIn = false
   @Published var userEmail:String? = nil
   @Published var userPassword:String? = nil
   @Published var stateMessage:String? = nil
   @Published var storedData:CVContent? = nil
 
+
   //  MARK: -User handling
 
-  func registerNewUser(email:String,password:String){
-    Auth.auth().createUser(withEmail: email, password: password){ (authDataResult, error) in
+  func registerNewUser(username:String,password:String){
+    Auth.auth().createUser(withEmail: username, password: password){ (authDataResult, error) in
       if let e = error {
         self.setStateMessageFromError(error:e)
       }
       else {
         print(authDataResult!)
-        print("succeeded in creating new user:\(email) with password:\(password)")
+        print("succeeded in creating new user:\(username) with password:\(password)")
         self.isLoggedIn = true
-        self.userEmail = email
-        self.setStateMessageFromString(string: "Signed In as \(email)")
+        self.userEmail = username
+        self.setStateMessageFromString(string: "Signed In as \(username)")
       }
     }
   }
   
-  func loginWith(email:String,password:String){
-    Auth.auth().signIn(withEmail: email, password: password){(authDataResult,error) in
+  func loginWith(username:String,password:String){
+    Auth.auth().signIn(withEmail: username, password: password){(authDataResult,error) in
       if let e = error {
         self.setStateMessageFromError(error: e)
       }
       else {
         print(authDataResult!)
-        print("Successful login wit user-email: \(email):\(password)")
+        print("Successful login wit user-email: \(username):\(password)")
         print("Credential:\(String(describing: authDataResult!.credential))")
         self.isLoggedIn = true
-        self.userEmail = email
-        self.setStateMessageFromString(string:"Signed In as:\(email)")
+        self.userEmail = username
+        self.setStateMessageFromString(string:"Signed In as:\(username)")
       }
     }
   }
@@ -61,16 +66,15 @@ class AuthenticationHandler:ObservableObject {
   }
 
   //  MARK: -Document handling
-
-  func storeDataToDataStore(email:String?=nil, password:String?=nil, cvname:String, data:CVContent?){
+  func storeDataToDataStore(email: String?, password: String?, dataIdentifier: String?, data: Codable?) {
     if isLoggedIn == true {
 
-      if let content = data,  let user = Auth.auth().currentUser?.email {
-        let uniqueIdentifier = "\(user):\(cvname)"
+      if let content:CVContent = data as? CVContent,  let user = Auth.auth().currentUser?.email , let cv = dataIdentifier{
+        let uniqueIdentifier = "\(user):\(cv)"
 
         do{
           let db = Firestore.firestore()
-          try db.collection(uniqueIdentifier).document(cvname).setData(from: content)
+          try db.collection(uniqueIdentifier).document(cv).setData(from: content)
           storedData = content
           setStateMessageFromString(string:  """
                                   Successfully saved CV with identifier:
@@ -84,10 +88,34 @@ class AuthenticationHandler:ObservableObject {
     } else {
       stateMessage = "You must login before submitting a CV"
     }
-
-
-
   }
+
+//  func storeDataToDataStore(email:String?=nil, password:String?=nil, dataIdentifier cvname:String?, data:CVContent?){
+//    if isLoggedIn == true {
+//
+//      if let content = data,  let user = Auth.auth().currentUser?.email , let cv = cvname{
+//        let uniqueIdentifier = "\(user):\(cv)"
+//
+//        do{
+//          let db = Firestore.firestore()
+//          try db.collection(uniqueIdentifier).document(cv).setData(from: content)
+//          storedData = content
+//          setStateMessageFromString(string:  """
+//                                  Successfully saved CV with identifier:
+//                                  \(uniqueIdentifier)
+//                                  """)
+//
+//        }catch {
+//          self.setStateMessageFromError(error: error)
+//        }
+//      }
+//    } else {
+//      stateMessage = "You must login before submitting a CV"
+//    }
+//
+//
+//
+//  }
 
   func fetchData(uniqueIdentifier:String){
     let db = Firestore.firestore()
@@ -104,6 +132,10 @@ class AuthenticationHandler:ObservableObject {
     }
   }
 
+  func deleteData(uniqueIdentifier: String) {
+    print("deleteData() has not been implemented")
+  }
+
 
   private func createUniqueIdentifier(email:String = "", cvcode:String)->String{
     return "\(email):\(cvcode)"
@@ -112,7 +144,7 @@ class AuthenticationHandler:ObservableObject {
   private func setStorredData(content:CVContent){
     DispatchQueue.main.async {
       self.storedData = content
-      print(self.stateMessage!)
+      print("Fetched this data:\(self.storedData!)")
     }
   }
 

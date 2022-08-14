@@ -23,17 +23,17 @@ struct Jakob_Skov_Sondergard_CVApp: App {
 
   init(){
     FirebaseApp.configure()
-    let db = Firestore.firestore()
-
-    print("I got a database!:\(db)\n")
+//    let db = Firestore.firestore()
+//    print("I got a database!:\(db)\n")
     
   }
 
-  @StateObject var authHandler = AuthenticationHandler()
+  @StateObject var authHandler:AuthenticationHandler = AuthenticationHandler()
+  @StateObject var cvContent:CVContent = CVContent(constTexts: ConstTexts())
 
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            ContentView(authHandler: authHandler, cvDataObserved: cvContent)
         }
     }
   }
